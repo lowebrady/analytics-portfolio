@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brady Lowe — Data Analytics Portfolio</title>
-  <meta name="description" content="Brady Lowe — Data Analytics Portfolio. MSU Information Science senior specializing in data analysis, A/B testing, statistical modeling, and business intelligence. Available May 2026.">
+  <meta name="description" content="Brady Lowe — Data Analytics Portfolio. MSU Information Science senior. Excel, Tableau, R, Python, SQL. Available May 2026. Metro Detroit.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -67,26 +67,57 @@
 
     .nav-links a:hover { color: var(--accent); }
 
-    .nav-resume {
+    .nav-cta {
       font-family: 'DM Mono', monospace;
       font-size: 0.72rem !important;
       letter-spacing: 0.08em !important;
-      border: 1px solid var(--ink) !important;
-      color: var(--ink) !important;
-      padding: 0.4rem 0.9rem;
-      transition: all 0.2s !important;
+      background: var(--accent) !important;
+      color: var(--cream) !important;
+      padding: 0.45rem 1rem !important;
+      transition: opacity 0.2s !important;
     }
 
-    .nav-resume:hover {
-      background: var(--ink) !important;
-      color: var(--cream) !important;
+    .nav-cta:hover { opacity: 0.85 !important; color: var(--cream) !important; }
+
+    /* ── AVAILABILITY BANNER ── */
+    .availability-banner {
+      background: var(--ink);
+      padding: 0.85rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
     }
+
+    .avail-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+      animation: pulse 2s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+      50% { opacity: 0.6; box-shadow: 0 0 0 5px rgba(34,197,94,0); }
+    }
+
+    .availability-banner p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: rgba(245,240,232,0.7);
+      letter-spacing: 0.08em;
+    }
+
+    .availability-banner strong { color: var(--cream); }
+    .availability-banner a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+    .availability-banner a:hover { opacity: 0.75; }
 
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
       padding: 0 3rem;
       padding-top: 5rem;
@@ -95,52 +126,77 @@
       margin: 0 auto;
     }
 
-    .hero-text h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      line-height: 1.05;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-text h1 em {
-      color: var(--accent);
-      font-style: italic;
-    }
-
-    .hero-tagline {
+    .hero-eyebrow {
       font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: var(--accent);
-      letter-spacing: 0.12em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
       gap: 0.75rem;
     }
 
-    .hero-tagline::after {
+    .hero-eyebrow::after {
       content: '';
       display: inline-block;
-      width: 2rem;
+      width: 2.5rem;
       height: 1px;
       background: var(--accent);
     }
 
-    .hero-text p {
-      font-size: 1.1rem;
-      color: var(--mid);
-      max-width: 440px;
-      margin-bottom: 2.5rem;
-      font-weight: 300;
-      line-height: 1.75;
+    .hero-text h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 5.5vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
     }
 
-    .hero-cta-row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
+    .hero-text h1 em { color: var(--accent); font-style: italic; }
+
+    .hero-title-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--mid);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--light);
     }
+
+    .hero-text p {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 460px;
+      margin-bottom: 2rem;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .hero-credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .credential-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--light);
+      color: var(--mid);
+      background: var(--card-bg);
+    }
+
+    .credential-badge.featured {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
 
     .hero-cta {
       display: inline-flex;
@@ -156,10 +212,7 @@
       transition: background 0.25s, transform 0.2s;
     }
 
-    .hero-cta:hover {
-      background: var(--accent);
-      transform: translateY(-2px);
-    }
+    .hero-cta:hover { background: var(--accent); transform: translateY(-2px); }
 
     .hero-cta-secondary {
       display: inline-flex;
@@ -175,107 +228,100 @@
       transition: all 0.25s;
     }
 
-    .hero-cta-secondary:hover {
-      background: var(--ink);
-      color: var(--cream);
-    }
+    .hero-cta-secondary:hover { background: var(--ink); color: var(--cream); }
 
+    /* ── HERO VISUAL ── */
     .hero-visual {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 1rem;
     }
 
     .stat-card {
       background: var(--card-bg);
       border: 1px solid var(--light);
-      padding: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
       animation: fadeUp 0.6s ease both;
     }
 
-    .stat-card:nth-child(2) { animation-delay: 0.1s; margin-top: 1.5rem; }
+    .stat-card:nth-child(2) { animation-delay: 0.1s; }
     .stat-card:nth-child(3) { animation-delay: 0.2s; }
-    .stat-card:nth-child(4) { animation-delay: 0.3s; margin-top: 1.5rem; }
+    .stat-card:nth-child(4) { animation-delay: 0.3s; }
+    .stat-card:nth-child(5) { animation-delay: 0.4s; }
 
     .stat-number {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.5rem;
+      font-size: 1.9rem;
       color: var(--accent);
-      display: block;
       line-height: 1;
-      margin-bottom: 0.4rem;
+      flex-shrink: 0;
+      min-width: 3.75rem;
     }
 
-    .stat-label {
-      font-size: 0.8rem;
+    .stat-info strong {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--ink);
+      margin-bottom: 0.1rem;
+      font-weight: 600;
+    }
+
+    .stat-info span {
+      font-size: 0.78rem;
       color: var(--mid);
       font-family: 'DM Mono', monospace;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
-    /* ── AVAILABILITY BANNER ── */
-    .availability-banner {
-      background: var(--ink);
-      padding: 0.85rem 3rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    .avail-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #22c55e;
-      flex-shrink: 0;
-      animation: pulse 2s ease infinite;
-    }
-
-    @keyframes pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); } 50% { opacity: 0.6; box-shadow: 0 0 0 5px rgba(34,197,94,0); } }
-
-    .availability-banner p {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: rgba(245,240,232,0.7);
-      letter-spacing: 0.08em;
-    }
-
-    .availability-banner strong {
-      color: var(--cream);
-    }
-
-    .availability-banner a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.2s;
-    }
-
-    .availability-banner a:hover { opacity: 0.75; }
-
-    /* ── SKILLS BAR ── */
+    /* ── SKILLS STRIP ── */
     .skills-strip {
       background: var(--ink);
-      padding: 1.25rem 3rem;
+      padding: 1.1rem 3rem;
       display: flex;
       gap: 2.5rem;
       overflow-x: auto;
       align-items: center;
-      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     .skill-tag {
       font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--cream);
-      opacity: 0.6;
+      opacity: 0.5;
       white-space: nowrap;
       letter-spacing: 0.08em;
     }
 
     .skill-tag.accent { color: var(--accent); opacity: 1; }
+
+    /* ── SHARED SECTION ── */
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+      margin-bottom: 0.75rem;
+      line-height: 1.15;
+    }
+
+    .section-subtitle {
+      font-size: 0.975rem;
+      color: var(--mid);
+      font-weight: 300;
+      max-width: 580px;
+      line-height: 1.75;
+      margin-bottom: 2.75rem;
+    }
 
     /* ── PROJECTS ── */
     .projects {
@@ -284,41 +330,21 @@
       padding: 6rem 3rem;
     }
 
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 3.5rem;
-    }
-
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-    }
-
     .project-grid {
       display: grid;
-      gap: 1.5rem;
+      gap: 1px;
+      background: var(--light);
+      border: 1px solid var(--light);
     }
 
     .project-card {
       background: var(--card-bg);
-      border: 1px solid var(--light);
-      padding: 2.5rem;
+      padding: 2rem 2.5rem;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 2rem;
       align-items: start;
-      transition: transform 0.25s, box-shadow 0.25s;
+      transition: background 0.2s;
       position: relative;
       overflow: hidden;
       text-decoration: none;
@@ -333,138 +359,203 @@
       background: var(--accent);
       transform: scaleY(0);
       transform-origin: bottom;
-      transition: transform 0.3s ease;
+      transition: transform 0.25s ease;
     }
 
     .project-card:hover::before { transform: scaleY(1); }
-    .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(26,24,20,0.08);
+    .project-card:hover { background: #FDFAF4; }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
     }
 
     .project-num {
       font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
+      font-size: 0.62rem;
       color: var(--accent);
       letter-spacing: 0.1em;
-      margin-bottom: 0.75rem;
-      display: block;
+      background: rgba(200,71,43,0.08);
+      padding: 0.15rem 0.5rem;
+    }
+
+    .project-domain {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--mid);
+      letter-spacing: 0.05em;
     }
 
     .project-card h3 {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
       line-height: 1.2;
-    }
-
-    .project-card p {
-      color: var(--mid);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
     }
 
     .project-highlight {
       font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       color: var(--ink);
       background: var(--light);
-      padding: 0.35rem 0.75rem;
+      padding: 0.28rem 0.6rem;
       display: inline-block;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       letter-spacing: 0.04em;
     }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+    .project-card p {
+      color: var(--mid);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
     }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 
     .tag {
       font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      padding: 0.3rem 0.7rem;
+      font-size: 0.62rem;
+      padding: 0.22rem 0.55rem;
       border: 1px solid var(--light);
       color: var(--mid);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
     }
 
     .project-arrow {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: var(--light);
       transition: color 0.2s, transform 0.2s;
-      padding-top: 0.25rem;
+      padding-top: 0.2rem;
     }
 
-    .project-card:hover .project-arrow {
-      color: var(--accent);
-      transform: translate(2px, -2px);
-    }
+    .project-card:hover .project-arrow { color: var(--accent); transform: translate(2px, -2px); }
 
-    /* ── SKILLS SECTION ── */
+    /* ── SKILLS ── */
     .skills-section {
-      background: var(--card-bg);
-      border-top: 1px solid var(--light);
-      border-bottom: 1px solid var(--light);
-      padding: 5rem 3rem;
+      background: var(--ink);
+      padding: 6rem 3rem;
     }
 
-    .skills-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .skills-inner { max-width: 1200px; margin: 0 auto; }
+    .skills-section .section-label { color: var(--accent); }
+    .skills-section .section-title { color: var(--cream); }
+    .skills-section .section-subtitle { color: rgba(245,240,232,0.5); }
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1px;
-      background: var(--light);
-      border: 1px solid var(--light);
-      margin-top: 3rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.07);
     }
 
-    .skill-group {
-      background: var(--cream);
-      padding: 2rem;
-    }
+    .skill-group { background: var(--ink); padding: 2rem; }
 
     .skill-group-label {
       font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       color: var(--accent);
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       margin-bottom: 1.25rem;
       display: block;
     }
 
-    .skill-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
+    .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
 
     .skill-list li {
-      font-size: 0.9rem;
-      color: var(--ink);
+      font-size: 0.87rem;
+      color: rgba(245,240,232,0.65);
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 0.6rem;
+      line-height: 1.45;
     }
 
     .skill-list li::before {
       content: '—';
       font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.18rem;
+    }
+
+    /* ── EXPERIENCE ── */
+    .experience-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 3rem;
+    }
+
+    .exp-grid {
+      display: grid;
+      gap: 1px;
+      background: var(--light);
+      border: 1px solid var(--light);
+      margin-top: 2.75rem;
+    }
+
+    .exp-card {
+      background: var(--card-bg);
+      padding: 2rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+    }
+
+    .exp-role {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-company {
+      font-family: 'DM Mono', monospace;
       font-size: 0.65rem;
       color: var(--accent);
+      letter-spacing: 0.07em;
+      margin-bottom: 1rem;
+    }
+
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .exp-bullets li {
+      font-size: 0.9rem;
+      color: var(--mid);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      line-height: 1.6;
+    }
+
+    .exp-bullets li::before {
+      content: '→';
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.22rem;
+    }
+
+    .exp-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--mid);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      text-align: right;
     }
 
     /* ── ABOUT ── */
     .about {
-      background: var(--ink);
+      background: var(--card-bg);
+      border-top: 1px solid var(--light);
+      border-bottom: 1px solid var(--light);
       padding: 6rem 3rem;
     }
 
@@ -474,68 +565,91 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5rem;
-      align-items: center;
+      align-items: start;
     }
-
-    .about .section-label { color: var(--accent); }
 
     .about h2 {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--cream);
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+      color: var(--ink);
       margin-bottom: 1.5rem;
+      line-height: 1.15;
     }
 
     .about p {
-      color: rgba(245,240,232,0.65);
-      font-size: 1rem;
-      line-height: 1.8;
+      color: var(--mid);
+      font-size: 0.975rem;
+      line-height: 1.85;
       margin-bottom: 1.25rem;
     }
+
+    .about p strong { color: var(--ink); font-weight: 500; }
 
     .about-cta {
       display: inline-flex;
       align-items: center;
       gap: 0.75rem;
-      margin-top: 0.75rem;
+      margin-top: 0.5rem;
       padding: 0.85rem 1.5rem;
-      border: 1px solid rgba(245,240,232,0.25);
+      background: var(--ink);
       color: var(--cream);
       text-decoration: none;
       font-size: 0.875rem;
       font-weight: 500;
       letter-spacing: 0.04em;
-      transition: all 0.2s;
+      transition: background 0.2s;
     }
 
-    .about-cta:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+    .about-cta:hover { background: var(--accent); }
+
+    .about-right { display: flex; flex-direction: column; gap: 1rem; }
+
+    .about-stat-block {
+      padding: 1.4rem 1.5rem;
+      border: 1px solid var(--light);
+      background: var(--cream);
     }
 
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .about-stat {
-      border-top: 1px solid rgba(245,240,232,0.15);
-      padding-top: 1.25rem;
-    }
-
-    .about-stat .num {
+    .about-stat-block .num {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.25rem;
+      font-size: 1.65rem;
       color: var(--accent);
       display: block;
+      margin-bottom: 0.2rem;
     }
 
-    .about-stat .label {
+    .about-stat-block .label {
       font-size: 0.8rem;
-      color: rgba(245,240,232,0.5);
+      color: var(--mid);
       font-family: 'DM Mono', monospace;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
+    }
+
+    .cert-block {
+      padding: 1.4rem 1.5rem;
+      border: 1px solid var(--accent);
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cert-block .trophy { font-size: 1.4rem; flex-shrink: 0; }
+
+    .cert-block .cert-text p:first-child {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .cert-block .cert-text p:last-child {
+      font-size: 0.83rem;
+      color: var(--ink);
+      font-weight: 500;
+      line-height: 1.4;
     }
 
     /* ── CONTACT ── */
@@ -551,105 +665,66 @@
 
     .contact h2 {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
       margin-bottom: 1rem;
     }
 
-    .contact > div > p {
-      color: var(--mid);
-      font-size: 1rem;
-      line-height: 1.75;
-      margin-bottom: 0.5rem;
-    }
+    .contact > div > p { color: var(--mid); font-size: 0.975rem; line-height: 1.75; margin-bottom: 0.4rem; }
 
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
 
     .contact-link {
       display: flex;
       align-items: center;
       gap: 1rem;
-      padding: 1.25rem 1.5rem;
+      padding: 1.1rem 1.5rem;
       border: 1px solid var(--light);
       text-decoration: none;
       color: var(--ink);
+      font-size: 0.9rem;
       font-weight: 500;
-      transition: all 0.25s;
+      transition: all 0.2s;
       background: var(--card-bg);
     }
 
-    .contact-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateX(4px);
-    }
-
-    .contact-link .icon {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--accent);
-      width: 2rem;
-      text-align: center;
-      flex-shrink: 0;
-    }
-
-    .contact-link .arrow {
-      margin-left: auto;
-      opacity: 0.3;
-      transition: opacity 0.2s;
-    }
-
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateX(4px); }
+    .contact-link .icon { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); width: 1.75rem; text-align: center; flex-shrink: 0; }
+    .contact-link .arrow { margin-left: auto; opacity: 0.3; transition: opacity 0.2s; }
     .contact-link:hover .arrow { opacity: 1; }
 
     /* ── FOOTER ── */
     footer {
       background: var(--ink);
-      padding: 2rem 3rem;
+      padding: 1.75rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    footer p {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      color: rgba(245,240,232,0.35);
-      letter-spacing: 0.06em;
-    }
-
-    footer a {
-      color: rgba(245,240,232,0.5);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    footer p { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: rgba(245,240,232,0.3); letter-spacing: 0.06em; }
+    footer a { color: rgba(245,240,232,0.45); text-decoration: none; transition: color 0.2s; }
     footer a:hover { color: var(--accent); }
 
     /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     .fade-in { animation: fadeUp 0.7s ease both; }
     .fade-in-delay { animation: fadeUp 0.7s ease 0.15s both; }
-    .fade-in-delay2 { animation: fadeUp 0.7s ease 0.3s both; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.25rem; }
-      .hero { grid-template-columns: 1fr; padding: 1.5rem; padding-top: 6rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links li:nth-child(3), .nav-links li:nth-child(4) { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 1.5rem; padding-top: 6rem; gap: 2.5rem; }
       .hero-visual { display: none; }
-      .projects, .skills-section, .about { padding: 4rem 1.5rem; }
+      .projects, .experience-section, .about, .skills-section { padding: 4rem 1.5rem; }
       .contact { padding: 4rem 1.5rem; grid-template-columns: 1fr; gap: 3rem; }
-      .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .skills-strip { padding: 1rem 1.5rem; }
-      .availability-banner { padding: 0.85rem 1.5rem; flex-wrap: wrap; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .availability-banner { padding: 0.85rem 1.5rem; }
+      footer { flex-direction: column; gap: 0.4rem; text-align: center; }
+      .exp-card { grid-template-columns: 1fr; }
+      .exp-date { text-align: left; }
     }
   </style>
 </head>
@@ -661,26 +736,34 @@
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a class="nav-resume" href="https://lowebrady.github.io" target="_blank">Resume ↗</a></li>
+      <li><a class="nav-cta" href="contact.html">Hire Me →</a></li>
     </ul>
   </nav>
 
   <!-- AVAILABILITY BANNER -->
   <div class="availability-banner">
     <div class="avail-dot"></div>
-    <p><strong>Available for opportunities</strong> — data analyst, business analyst &amp; marketing analyst roles &middot; graduating May 2026 &middot; <a href="contact.html">get in touch →</a></p>
+    <p><strong>Open to opportunities</strong> — data analyst · business analyst · marketing analyst &nbsp;·&nbsp; graduating May 2026 &nbsp;·&nbsp; Metro Detroit &nbsp;·&nbsp; <a href="contact.html">get in touch →</a></p>
   </div>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-text fade-in">
-      <p class="hero-tagline">Data Analytics Portfolio</p>
+      <p class="hero-eyebrow">Data Analytics Portfolio</p>
       <h1>Brady<br><em>Lowe.</em></h1>
-      <p>Information Science senior at MSU turning raw data into clear, actionable insights — through Excel, Tableau, R, Python, and SQL. I find the signal in the noise and communicate it to people who make decisions.</p>
+      <p class="hero-title-sub">B.A. Information Science &nbsp;·&nbsp; Michigan State University &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; GPA 3.15</p>
+      <p>I turn messy data into clear decisions. From A/B tests and KPI dashboards to statistical models and Tableau visualizations — I build analyses that help organizations act with confidence.</p>
+      <div class="hero-credentials">
+        <span class="credential-badge featured">🏆 Recording Academy Certified</span>
+        <span class="credential-badge">Excel · Tableau · R · Python · SQL</span>
+        <span class="credential-badge">10 Completed Projects</span>
+        <span class="credential-badge">IT Internship — AJM Packaging</span>
+      </div>
       <div class="hero-cta-row">
-        <a class="hero-cta" href="#projects">View Projects →</a>
+        <a class="hero-cta" href="#projects">View My Work →</a>
         <a class="hero-cta-secondary" href="contact.html">Get in Touch</a>
       </div>
     </div>
@@ -688,112 +771,109 @@
     <div class="hero-visual fade-in-delay">
       <div class="stat-card">
         <span class="stat-number">10</span>
-        <span class="stat-label">Completed Projects</span>
+        <div class="stat-info"><strong>Completed Projects</strong><span>Tableau, R, Excel, Python, SQL</span></div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">+14%</span>
+        <div class="stat-info"><strong>Open Rate Lift</strong><span>Allbirds A/B test, p &lt; 0.05</span></div>
       </div>
       <div class="stat-card">
         <span class="stat-number">6K+</span>
-        <span class="stat-label">YouTube Videos Analyzed</span>
+        <div class="stat-info"><strong>Videos Analyzed</strong><span>YouTube trending dataset</span></div>
       </div>
       <div class="stat-card">
-        <span class="stat-number">5+</span>
-        <span class="stat-label">Tools: Tableau, R, Python, Excel, SQL</span>
+        <span class="stat-number">3.15</span>
+        <div class="stat-info"><strong>GPA — MSU</strong><span>Information Science, B.A.</span></div>
       </div>
       <div class="stat-card">
-        <span class="stat-number">May '26</span>
-        <span class="stat-label">Available — MSU Grad</span>
+        <span class="stat-number">🏆</span>
+        <div class="stat-info"><strong>Recording Academy</strong><span>Data Analysis Certification, 2026</span></div>
       </div>
     </div>
   </section>
 
   <!-- SKILLS STRIP -->
   <div class="skills-strip">
-    <span class="skill-tag accent">// CORE SKILLS</span>
-    <span class="skill-tag">Excel &amp; Pivot Tables</span>
+    <span class="skill-tag accent">// TOOLS</span>
+    <span class="skill-tag">Excel (Advanced)</span>
     <span class="skill-tag">Tableau</span>
-    <span class="skill-tag">R / tidyverse / ggplot2</span>
+    <span class="skill-tag">R / ggplot2</span>
     <span class="skill-tag">Python</span>
     <span class="skill-tag">SQL</span>
     <span class="skill-tag">A/B Testing</span>
-    <span class="skill-tag">Statistical Analysis</span>
-    <span class="skill-tag">Data Visualization</span>
     <span class="skill-tag">Hypothesis Testing</span>
+    <span class="skill-tag">Statistical Analysis</span>
+    <span class="skill-tag">KPI Dashboards</span>
+    <span class="skill-tag">Data Visualization</span>
     <span class="skill-tag">Marketing Analytics</span>
+    <span class="skill-tag">RMarkdown</span>
   </div>
 
   <!-- PROJECTS -->
   <section id="projects" class="projects">
-    <div class="section-header">
-      <div>
-        <p class="section-label">// WORK</p>
-        <h2 class="section-title">Selected Projects</h2>
-      </div>
-    </div>
+    <p class="section-label">// WORK</p>
+    <h2 class="section-title">Selected Projects</h2>
+    <p class="section-subtitle">10 completed analyses across Excel, Tableau, R, and Python — covering marketing, operations, web analytics, and statistical modeling.</p>
 
     <div class="project-grid">
 
-      <a class="project-card" href="project-youtube.html">
+      <a class="project-card" href="project-intel-tableau.html">
         <div>
-          <span class="project-num">01 — GLOBAL TECHNOLOGY EXPERIENCE / CONTENT ANALYTICS</span>
-          <h3>YouTube Trending Data Analysis</h3>
-          <div class="project-highlight">↑ 2.3× engagement lift identified from comments analysis</div>
-          <p>Analyzed 6,000+ trending YouTube videos to surface the performance drivers that separate viral content from the rest. Built pivot tables, histograms, and summary tables in Excel — finding that early upload velocity, not raw view count, is the strongest trending predictor.</p>
+          <div class="project-meta">
+            <span class="project-num">01</span>
+            <span class="project-domain">TABLEAU · GLOBAL CAREER ACCELERATOR · INTEL</span>
+          </div>
+          <h3>Intel Energy Dashboard — Tableau</h3>
+          <div class="project-highlight">Built for Intel's Sustainability Team — data center site selection support</div>
+          <p>Multi-sheet Tableau dashboard combining two datasets for Intel's Sustainability Team. Calculated fields, parameter-driven composite site score, dual-axis plots, tree maps, and dashboard actions for seamless drill-down exploration.</p>
           <div class="tag-row">
-            <span class="tag">Excel</span>
-            <span class="tag">Pivot Tables</span>
-            <span class="tag">Data Visualization</span>
-            <span class="tag">Content Analytics</span>
-            <span class="tag">Engagement Analysis</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Calculated Fields</span>
+            <span class="tag">Parameters</span>
+            <span class="tag">Dashboard Design</span>
+            <span class="tag">Data Blending</span>
+            <span class="tag">Energy Analytics</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
       </a>
 
-      <a class="project-card" href="project-bart.html">
+      <a class="project-card" href="project-spotify-tableau.html">
         <div>
-          <span class="project-num">02 — GLOBAL TECHNOLOGY EXPERIENCE / OPERATIONAL ANALYTICS</span>
-          <h3>BART Ridership Data Analysis</h3>
-          <div class="project-highlight">Top 5 stations = 40% of all boardings; Yellow Line capacity gap identified</div>
-          <p>Examined Bay Area Rapid Transit ridership records to uncover weekday vs. weekend demand patterns, downtown station traffic peaks, and Yellow Line capacity constraints — with data-backed recommendations for service scheduling and off-peak fare strategy.</p>
+          <div class="project-meta">
+            <span class="project-num">02</span>
+            <span class="project-domain">TABLEAU · GLOBAL CAREER ACCELERATOR</span>
+          </div>
+          <h3>Billboard &amp; Spotify Music Analysis — Tableau</h3>
+          <div class="project-highlight">Dynamic genre proportion views + parameter-driven audio feature comparisons</div>
+          <p>Interactive Tableau visualizations exploring genre trends and Spotify audio feature relationships. Parameter-driven scatter plots let users switch axes on the fly — one flexible tool replacing 28 static charts.</p>
           <div class="tag-row">
-            <span class="tag">Excel</span>
-            <span class="tag">Operational Analysis</span>
-            <span class="tag">Capacity Planning</span>
-            <span class="tag">Data Cleaning</span>
-            <span class="tag">Transportation Data</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Parameters</span>
+            <span class="tag">Interactive Viz</span>
+            <span class="tag">Spotify API Data</span>
+            <span class="tag">Genre Analysis</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
       </a>
 
-      <a class="project-card" href="project-doordash.html">
+      <a class="project-card" href="project-grammy-kpi.html">
         <div>
-          <span class="project-num">03 — MILESTONE PROJECT / MARKET ANALYTICS</span>
-          <h3>DoorDash Delivery Analysis</h3>
-          <div class="project-highlight">Suburban delivery gap: +12 min vs. urban; 3 high-priority markets flagged</div>
-          <p>Analyzed delivery data across major U.S. markets to uncover trends in delivery time, order volume, and cuisine preferences. Identified regional patterns — including a clear 35-minute customer satisfaction cliff — and provided data-driven recommendations to improve operational efficiency at scale.</p>
-          <div class="tag-row">
-            <span class="tag">Excel</span>
-            <span class="tag">VLOOKUP</span>
-            <span class="tag">Regional Analysis</span>
-            <span class="tag">KPI Tracking</span>
-            <span class="tag">Logistics Analytics</span>
+          <div class="project-meta">
+            <span class="project-num">03</span>
+            <span class="project-domain">EXCEL · RECORDING ACADEMY · 🏆 CERTIFIED</span>
           </div>
-        </div>
-        <div class="project-arrow">↗</div>
-      </a>
-
-      <a class="project-card" href="project-winter-sports.html">
-        <div>
-          <span class="project-num">04 — MILESTONE PROJECT / TREND ANALYTICS</span>
-          <h3>Winter Sports Interest Analysis</h3>
-          <div class="project-highlight">Curling 18× spike multiplier; 6-week interest runway identified for campaign timing</div>
-          <p>Analyzed Google Trends data for nine Olympic winter sports to uncover cyclical public interest patterns. Separated Olympic years from non-Olympic years, calculated spike multipliers and campaign lead-time windows — translating search data into concrete content strategy recommendations.</p>
+          <h3>Grammy.com KPI &amp; Engagement Analysis</h3>
+          <div class="project-highlight">Assessed business impact of Grammy.com's 2022 website split — certification earned</div>
+          <p>Advanced Excel — XLOOKUP, SUMIFS, AVERAGEIFS, PivotTables — measuring engagement KPIs and mobile visitor rates pre- and post-site split. Executive-ready findings delivered to the Recording Academy. Data Analysis Certification awarded.</p>
           <div class="tag-row">
-            <span class="tag">Google Trends</span>
-            <span class="tag">Excel</span>
-            <span class="tag">Cyclical Analysis</span>
-            <span class="tag">Content Strategy</span>
-            <span class="tag">Seasonal Marketing</span>
+            <span class="tag">Excel (Advanced)</span>
+            <span class="tag">XLOOKUP</span>
+            <span class="tag">SUMIFS / AVERAGEIFS</span>
+            <span class="tag">KPI Analysis</span>
+            <span class="tag">Web Analytics</span>
+            <span class="tag">🏆 Certified</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
@@ -801,10 +881,13 @@
 
       <a class="project-card" href="project-allbirds.html">
         <div>
-          <span class="project-num">05 — MILESTONE PROJECT / A/B TESTING</span>
+          <div class="project-meta">
+            <span class="project-num">04</span>
+            <span class="project-domain">A/B TESTING · MARKETING ANALYTICS</span>
+          </div>
           <h3>Allbirds A/B Email Campaign Analysis</h3>
-          <div class="project-highlight">+14% open rate lift, p &lt; 0.05; estimated +22% revenue lift per campaign</div>
-          <p>Designed and analyzed an A/B test on promotional email subject lines — comparing product-focused vs. benefit-focused framing. Applied hypothesis testing in Excel to confirm statistical significance, identified a nuanced conversion rate story, and delivered tiered recommendations for segmented follow-up testing.</p>
+          <div class="project-highlight">+14% open rate lift · p &lt; 0.05 · estimated +22% revenue lift per send</div>
+          <p>A/B test on email subject line strategy — product-focused vs. benefit-focused framing. Hypothesis testing in Excel confirmed statistical significance. Tiered recommendations including a nuanced conversion rate finding for segmented follow-up testing.</p>
           <div class="tag-row">
             <span class="tag">A/B Testing</span>
             <span class="tag">Hypothesis Testing</span>
@@ -818,10 +901,13 @@
 
       <a class="project-card" href="project-r-stats.html">
         <div>
-          <span class="project-num">06 — MSU REASONING WITH DATA / STATISTICAL ANALYSIS</span>
+          <div class="project-meta">
+            <span class="project-num">05</span>
+            <span class="project-domain">R · STATISTICAL ANALYSIS · MSU</span>
+          </div>
           <h3>Global Datasets — Statistical Analysis in R</h3>
-          <div class="project-highlight">GDP explains ~70% of life expectancy variance; R² regression across 180+ countries</div>
-          <p>Analyzed global datasets on life expectancy, CO₂ emissions, and electricity access using R and the tidyverse ecosystem. Built confidence intervals, ran hypothesis tests, and created publication-quality ggplot2 visualizations — with all analysis written in reproducible RMarkdown.</p>
+          <div class="project-highlight">GDP explains ~70% of life expectancy variance · regression across 180+ countries</div>
+          <p>Life expectancy, CO₂ emissions, and electricity access analyzed using R and tidyverse. Confidence intervals, t-tests, chi-square, linear regression, and publication-quality ggplot2 visualizations — all in reproducible RMarkdown.</p>
           <div class="tag-row">
             <span class="tag">R / RStudio</span>
             <span class="tag">tidyverse</span>
@@ -834,70 +920,101 @@
         <div class="project-arrow">↗</div>
       </a>
 
+      <a class="project-card" href="project-youtube.html">
+        <div>
+          <div class="project-meta">
+            <span class="project-num">06</span>
+            <span class="project-domain">EXCEL · CONTENT ANALYTICS · GLOBAL TECHNOLOGY EXPERIENCE</span>
+          </div>
+          <h3>YouTube Trending Data Analysis</h3>
+          <div class="project-highlight">2.3× engagement lift from comments · early velocity beats raw view count</div>
+          <p>6,000+ trending YouTube videos analyzed using Excel pivot tables, histograms, and summary statistics. Early upload velocity and enabled comments — not raw view count — are the strongest predictors of trending status.</p>
+          <div class="tag-row">
+            <span class="tag">Excel</span>
+            <span class="tag">Pivot Tables</span>
+            <span class="tag">Histograms</span>
+            <span class="tag">Content Analytics</span>
+            <span class="tag">Engagement Analysis</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="project-doordash.html">
+        <div>
+          <div class="project-meta">
+            <span class="project-num">07</span>
+            <span class="project-domain">EXCEL · MARKET ANALYTICS · OPERATIONS</span>
+          </div>
+          <h3>DoorDash Delivery Analysis</h3>
+          <div class="project-highlight">+12 min suburban gap · 35-min satisfaction cliff · 3 priority markets flagged</div>
+          <p>Multi-market delivery data identifying regional performance gaps and a 35-minute customer satisfaction threshold. Market-specific operational recommendations targeting Dasher supply problems, not blanket policy changes.</p>
+          <div class="tag-row">
+            <span class="tag">Excel</span>
+            <span class="tag">VLOOKUP</span>
+            <span class="tag">Market Analysis</span>
+            <span class="tag">KPI Tracking</span>
+            <span class="tag">Logistics Analytics</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="project-bart.html">
+        <div>
+          <div class="project-meta">
+            <span class="project-num">08</span>
+            <span class="project-domain">EXCEL · OPERATIONAL ANALYTICS · GLOBAL TECHNOLOGY EXPERIENCE</span>
+          </div>
+          <h3>BART Ridership Data Analysis</h3>
+          <div class="project-highlight">Top 5 stations = 40% of boardings · Yellow Line capacity crunch identified</div>
+          <p>BART ridership analysis uncovering weekday vs. weekend demand patterns, peak station concentrations, and Yellow Line capacity pressure. Modeled two scheduling scenarios; recommended targeted over system-wide changes.</p>
+          <div class="tag-row">
+            <span class="tag">Excel</span>
+            <span class="tag">Pivot Tables</span>
+            <span class="tag">Operational Analysis</span>
+            <span class="tag">Capacity Planning</span>
+            <span class="tag">Transportation Data</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="project-winter-sports.html">
+        <div>
+          <div class="project-meta">
+            <span class="project-num">09</span>
+            <span class="project-domain">GOOGLE TRENDS · EXCEL · TREND ANALYTICS</span>
+          </div>
+          <h3>Winter Sports Interest Analysis</h3>
+          <div class="project-highlight">Curling 18× spike multiplier · 6-week campaign runway identified</div>
+          <p>Google Trends analysis for nine Olympic winter sports identifying cyclical patterns, spike multipliers, and event-lead-time windows. Most winter sports are event-dependent, not seasonal — a finding that reshapes campaign timing strategy entirely.</p>
+          <div class="tag-row">
+            <span class="tag">Google Trends</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Cyclical Analysis</span>
+            <span class="tag">Content Strategy</span>
+            <span class="tag">Seasonal Marketing</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
       <a class="project-card" href="project-ai-industry.html">
         <div>
-          <span class="project-num">07 — SELF-DIRECTED / INDUSTRY RESEARCH</span>
+          <div class="project-meta">
+            <span class="project-num">10</span>
+            <span class="project-domain">INDUSTRY RESEARCH · SELF-DIRECTED</span>
+          </div>
           <h3>AI Industry Transformation Analysis</h3>
-          <div class="project-highlight">SQL in 75%+ of analyst job postings; pure reporting roles declining as AI absorbs routine tasks</div>
-          <p>A self-directed industry analysis assessing AI's impact across data and technology fields — mapping emerging roles, identifying skill gaps, and translating macro trends from McKinsey, WEF, and LinkedIn Workforce Reports into a concrete career positioning strategy.</p>
+          <div class="project-highlight">SQL in 75%+ of postings · pure reporting declining · storytelling premium rising</div>
+          <p>Market analysis of AI's impact on data and technology roles — drawing on McKinsey, WEF, and LinkedIn Workforce Reports. Mapped skill demand shifts, identified highest-ROI competencies, and translated findings into a concrete positioning strategy.</p>
           <div class="tag-row">
             <span class="tag">Industry Research</span>
             <span class="tag">Trend Analysis</span>
             <span class="tag">Skills Mapping</span>
+            <span class="tag">Market Analysis</span>
             <span class="tag">Career Strategy</span>
-            <span class="tag">AI / Tech Sector</span>
-          </div>
-        </div>
-        <div class="project-arrow">↗</div>
-      </a>
-
-      <a class="project-card" href="project-intel-tableau.html">
-        <div>
-          <span class="project-num">08 — GLOBAL CAREER ACCELERATOR / TABLEAU</span>
-          <h3>Intel Energy Dashboard — Tableau</h3>
-          <div class="project-highlight">Multi-sheet dashboard for Intel's Sustainability Team — site selection support</div>
-          <p>Built a multi-sheet Tableau dashboard for Intel's Sustainability Team supporting data center site selection. Created calculated fields, dual-axis plots, bar charts, tree maps, and line charts across two datasets — with dynamic parameters and dropdown filters for interactive exploration.</p>
-          <div class="tag-row">
-            <span class="tag">Tableau</span>
-            <span class="tag">Calculated Fields</span>
-            <span class="tag">Dashboard Design</span>
-            <span class="tag">Dual-Axis Charts</span>
-            <span class="tag">Energy Analytics</span>
-          </div>
-        </div>
-        <div class="project-arrow">↗</div>
-      </a>
-
-      <a class="project-card" href="project-spotify-tableau.html">
-        <div>
-          <span class="project-num">09 — GLOBAL CAREER ACCELERATOR / TABLEAU</span>
-          <h3>Billboard &amp; Spotify Music Analysis — Tableau</h3>
-          <div class="project-highlight">Dynamic genre proportion views + custom audio feature comparisons</div>
-          <p>Built interactive Tableau visualizations using parameters to explore genre trends, track popularity, and audio feature relationships across Billboard and Spotify datasets. Designed dynamic genre proportion views and custom audio feature comparison tools for exploratory analysis.</p>
-          <div class="tag-row">
-            <span class="tag">Tableau</span>
-            <span class="tag">Parameters</span>
-            <span class="tag">Interactive Viz</span>
-            <span class="tag">Music Analytics</span>
-            <span class="tag">Trend Analysis</span>
-          </div>
-        </div>
-        <div class="project-arrow">↗</div>
-      </a>
-
-      <a class="project-card" href="project-grammy-kpi.html">
-        <div>
-          <span class="project-num">10 — GLOBAL CAREER ACCELERATOR / EXCEL — RECORDING ACADEMY</span>
-          <h3>Grammy.com KPI &amp; Engagement Analysis</h3>
-          <div class="project-highlight">Assessed business impact of Grammy.com's 2022 website split — executive-ready findings</div>
-          <p>Used advanced Excel analytics — PivotTables, XLOOKUP, SUMIFS, AVERAGEIFS — to calculate user engagement KPIs and mobile visitor rates for Grammy.com. Assessed the business impact of the site's 2022 split and delivered executive-ready findings. This project earned a Data Analysis Certification from the Global Career Accelerator / Recording Academy.</p>
-          <div class="tag-row">
-            <span class="tag">Excel (Advanced)</span>
-            <span class="tag">XLOOKUP</span>
-            <span class="tag">SUMIFS / AVERAGEIFS</span>
-            <span class="tag">KPI Analysis</span>
-            <span class="tag">Web Analytics</span>
-            <span class="tag">🏆 Certified</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
@@ -905,64 +1022,126 @@
 
     </div>
 
-    <!-- CERTIFICATION CALLOUT -->
-    <div style="margin-top:2.5rem; padding:1.5rem 2rem; border:1px solid var(--light); background:var(--card-bg); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
-      <span style="font-family:'DM Serif Display',serif; font-size:1.75rem; color:var(--accent);">🏆</span>
-      <div>
-        <p style="font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.3rem;">Certification</p>
-        <p style="font-size:0.95rem; color:var(--ink); font-weight:500; margin:0;">Data Analysis Certification — Generating Recommendations Using Excel</p>
-        <p style="font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--mid); margin-top:0.2rem; letter-spacing:0.04em;">Global Career Accelerator / Recording Academy &nbsp;·&nbsp; 2026</p>
-      </div>
+    <div style="margin-top:1px; background:var(--card-bg); border:1px solid var(--light); border-top:none; padding:1.4rem 2.5rem; display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap;">
+      <span style="font-size:1.3rem;">🏆</span>
+      <p style="font-size:0.88rem; color:var(--ink); margin:0;"><strong>Data Analysis Certification — Generating Recommendations Using Excel</strong> &nbsp;·&nbsp; <span style="color:var(--mid); font-weight:400;">Global Career Accelerator / Recording Academy, 2026</span></p>
     </div>
   </section>
 
-  <!-- SKILLS SECTION -->
+  <!-- SKILLS -->
   <section id="skills" class="skills-section">
     <div class="skills-inner">
       <p class="section-label">// CAPABILITIES</p>
       <h2 class="section-title">Skills &amp; Tools</h2>
+      <p class="section-subtitle">Full-stack analytics — from raw data cleaning to executive-ready deliverables.</p>
 
       <div class="skills-grid">
         <div class="skill-group">
-          <span class="skill-group-label">Data Analysis</span>
+          <span class="skill-group-label">Analysis Tools</span>
           <ul class="skill-list">
-            <li>Excel (Advanced) — PivotTables, XLOOKUP, SUMIFS, T.TEST</li>
-            <li>SQL — queries, joins, aggregations</li>
+            <li>Excel — PivotTables, XLOOKUP, SUMIFS, T.TEST, conditional formatting</li>
+            <li>Tableau — dashboards, calculated fields, parameters, dashboard actions</li>
+            <li>R / RStudio / tidyverse / ggplot2</li>
             <li>Python — pandas, data cleaning</li>
+            <li>SQL — queries, joins, aggregations</li>
             <li>Google Trends</li>
-            <li>Google Sheets</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <span class="skill-group-label">Data Visualization & BI</span>
-          <ul class="skill-list">
-            <li>Tableau — dashboards, calculated fields, parameters</li>
-            <li>R / ggplot2 — publication-quality charts</li>
-            <li>Excel charting — histograms, dual-axis, tree maps</li>
-            <li>RMarkdown (reproducible analysis)</li>
           </ul>
         </div>
         <div class="skill-group">
           <span class="skill-group-label">Statistical Methods</span>
           <ul class="skill-list">
-            <li>Hypothesis Testing &amp; p-values</li>
-            <li>A/B Testing design &amp; analysis</li>
+            <li>A/B Testing — design, execution, significance testing</li>
+            <li>Hypothesis Testing — t-tests, chi-square, p-values</li>
             <li>Confidence Intervals</li>
-            <li>Linear Regression (R²)</li>
+            <li>Linear Regression &amp; R²</li>
             <li>Descriptive &amp; Inferential Statistics</li>
+            <li>RMarkdown — reproducible workflows</li>
           </ul>
         </div>
         <div class="skill-group">
-          <span class="skill-group-label">Business &amp; Communication</span>
+          <span class="skill-group-label">Business Analytics</span>
           <ul class="skill-list">
-            <li>Data storytelling &amp; executive presentations</li>
-            <li>Marketing analytics &amp; A/B testing</li>
-            <li>KPI definition &amp; tracking</li>
+            <li>KPI definition, tracking &amp; dashboarding</li>
+            <li>Marketing analytics &amp; campaign analysis</li>
+            <li>Web analytics — engagement, mobile, conversion</li>
             <li>Operations &amp; logistics analytics</li>
-            <li>UX research &amp; design thinking</li>
+            <li>Market &amp; competitive analysis</li>
+            <li>Executive reporting &amp; data storytelling</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group-label">Additional Skills</span>
+          <ul class="skill-list">
+            <li>HTML, CSS, JavaScript</li>
+            <li>Figma &amp; Adobe Creative Suite</li>
+            <li>UX research — usability testing, user interviews</li>
+            <li>Active Directory &amp; Windows administration</li>
+            <li>IT support (200+ end users — AJM Packaging)</li>
+            <li>Project management &amp; team leadership</li>
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="experience-section">
+    <p class="section-label">// EXPERIENCE</p>
+    <h2 class="section-title">Work &amp; Leadership</h2>
+    <p class="section-subtitle">Real organizations, real deliverables — not just coursework.</p>
+
+    <div class="exp-grid">
+
+      <div class="exp-card">
+        <div>
+          <p class="exp-role">Data Analysis Trainee</p>
+          <p class="exp-company">GLOBAL CAREER ACCELERATOR — DATA ANALYSIS TRACK &nbsp;·&nbsp; MICHIGAN STATE UNIVERSITY &nbsp;·&nbsp; RECORDING ACADEMY PARTNER</p>
+          <ul class="exp-bullets">
+            <li>Built Tableau dashboards for real industry partners — Intel's Sustainability Team and the Recording Academy</li>
+            <li>Analyzed 6,000+ YouTube trending videos and BART ridership records; delivered insights to program stakeholders</li>
+            <li>Earned a Data Analysis Certification for Grammy.com KPI analysis delivered to Recording Academy executives</li>
+          </ul>
+        </div>
+        <div class="exp-date">Jan 2025 – Present</div>
+      </div>
+
+      <div class="exp-card">
+        <div>
+          <p class="exp-role">Information Technology Intern</p>
+          <p class="exp-company">AJM PACKAGING CORPORATION &nbsp;·&nbsp; BLOOMFIELD HILLS, MI</p>
+          <ul class="exp-bullets">
+            <li>Supported 200+ end users — hardware, software, and network troubleshooting during peak production periods</li>
+            <li>Managed user lifecycle in Active Directory; collaborated with network and security teams on infrastructure upgrades</li>
+            <li>Documented technical procedures to improve team knowledge sharing and reduce repeat escalations</li>
+          </ul>
+        </div>
+        <div class="exp-date">May – Sep 2024</div>
+      </div>
+
+      <div class="exp-card">
+        <div>
+          <p class="exp-role">Freelance Graphic Designer</p>
+          <p class="exp-company">SELF-EMPLOYED &nbsp;·&nbsp; METRO DETROIT, MI</p>
+          <ul class="exp-bullets">
+            <li>Design brand identity, social content, and visual assets for collegiate and semi-professional athletes</li>
+            <li>Manage multiple concurrent client projects under tight deadlines with evolving creative requirements</li>
+          </ul>
+        </div>
+        <div class="exp-date">Jan 2025 – Present</div>
+      </div>
+
+      <div class="exp-card">
+        <div>
+          <p class="exp-role">Vice President</p>
+          <p class="exp-company">DELTA KAPPA EPSILON FRATERNITY — SIGMA KAPPA CHAPTER</p>
+          <ul class="exp-bullets">
+            <li>Direct internal operations and committee oversight for an 80+ member organization</li>
+            <li>Coordinate recruitment, philanthropy events, and member development programming</li>
+          </ul>
+        </div>
+        <div class="exp-date">2024 – Present</div>
+      </div>
+
     </div>
   </section>
 
@@ -971,28 +1150,31 @@
     <div class="about-inner">
       <div>
         <p class="section-label">// ABOUT</p>
-        <h2>Data-driven by nature,<br>creative by practice.</h2>
-        <p>I'm a graduating senior at Michigan State University studying Information Science, with a focus on the Data Analysis track through the Global Technology Experience (GTE) program. I believe good analysis isn't just about the numbers — it's about telling the right story to the right people at the right time.</p>
-        <p>My experience spans analytics, IT, and design. I completed an IT internship at AJM Packaging supporting 200+ end users and working on Active Directory and infrastructure projects — giving me a real understanding of how data and systems work together inside organizations. I'm also a freelance graphic designer and VP of Delta Kappa Epsilon (80+ members), which means I've built real experience managing projects, communicating decisions, and leading teams.</p>
-        <p>I hold a Data Analysis Certification from the Global Career Accelerator / Recording Academy, and a UX design portfolio — because I design with data and analyze with empathy. That combination is increasingly valuable as companies look for analysts who can bridge research, product, and strategy.</p>
+        <h2>Analytical by training,<br>clear by choice.</h2>
+        <p>I'm a graduating senior at Michigan State University studying Information Science on the Data Analysis track. I believe the hardest part of data work isn't the analysis — it's communicating what it means to someone who needs to act on it.</p>
+        <p>My projects span <strong>marketing analytics, operational data, web KPIs, statistical modeling, and Tableau dashboarding</strong> — built for real industry partners including Intel and the Recording Academy. My IT internship at AJM Packaging gives me a practical understanding of how data and systems work inside real organizations.</p>
+        <p>Outside analytics, I'm a freelance graphic designer and VP of a fraternity chapter — so I know how to manage competing priorities, communicate clearly under pressure, and deliver work that gets used.</p>
         <a class="about-cta" href="contact.html">Open to opportunities — let's talk →</a>
       </div>
-      <div class="about-stats">
-        <div class="about-stat">
+      <div class="about-right">
+        <div class="about-stat-block">
           <span class="num">MSU</span>
-          <span class="label">Michigan State University</span>
+          <span class="label">B.A. Information Science · Data Analysis Track · GPA 3.15</span>
         </div>
-        <div class="about-stat">
+        <div class="about-stat-block">
           <span class="num">May '26</span>
-          <span class="label">Expected Graduation</span>
+          <span class="label">Available · Metro Detroit · Open to remote &amp; hybrid</span>
         </div>
-        <div class="about-stat">
-          <span class="num">B.A.</span>
-          <span class="label">Information Science</span>
+        <div class="about-stat-block">
+          <span class="num">10</span>
+          <span class="label">Completed projects · Excel, Tableau, R, Python, SQL</span>
         </div>
-        <div class="about-stat">
-          <span class="num">GTE</span>
-          <span class="label">Data Analysis Track</span>
+        <div class="cert-block">
+          <span class="trophy">🏆</span>
+          <div class="cert-text">
+            <p>Certification</p>
+            <p>Data Analysis — Generating Recommendations Using Excel · Recording Academy / GCA, 2026</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1004,7 +1186,7 @@
       <p class="section-label">// CONTACT</p>
       <h2>Let's work<br>together.</h2>
       <p>Open to data analyst, business analyst, and marketing analyst roles — internship and entry-level.</p>
-      <p style="margin-top:0.5rem;">Based in Metro Detroit. Open to remote and hybrid opportunities nationwide.</p>
+      <p>Metro Detroit based. Open to remote and hybrid nationwide.</p>
     </div>
     <div class="contact-links">
       <a class="contact-link" href="mailto:bradyalowe@icloud.com">
@@ -1024,7 +1206,7 @@
       </a>
       <a class="contact-link" href="https://github.com/lowebrady" target="_blank">
         <span class="icon">&lt;/&gt;</span>
-        GitHub — View Code
+        GitHub — lowebrady
         <span class="arrow">→</span>
       </a>
       <a class="contact-link" href="contact.html">
@@ -1040,7 +1222,7 @@
     <p>© 2026 BRADY LOWE — DATA ANALYTICS</p>
     <p>
       <a href="https://lowebrady.github.io">UX Portfolio ↗</a>
-      &nbsp;&nbsp;·&nbsp;&nbsp;
+      &nbsp;·&nbsp;
       METRO DETROIT, MI
     </p>
   </footer>
