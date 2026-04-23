@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Intel Energy Dashboard — Brady Lowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">BL — ANALYTICS</a>
+  <ul class="nav-links">
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#projects">Projects</a> &nbsp;/&nbsp; Intel Energy Dashboard
+</div>
+
+<section class="cs-hero">
+  <span class="cs-label">08 — Data Visualization / Tableau</span>
+  <h1>Intel Energy<br><em>Dashboard</em></h1>
+  <p class="cs-summary">Built a multi-sheet Tableau dashboard for Intel's Sustainability Team to support data center site selection — combining two datasets into an interactive decision-support tool with calculated fields, dynamic parameters, and drill-down filtering across multiple chart types.</p>
+  <div class="cs-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-val">Data Visualization Analyst</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tools</span>
+      <span class="meta-val">Tableau Desktop, Calculated Fields, Parameters</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Domain</span>
+      <span class="meta-val">Energy / Sustainability / Operations</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Context</span>
+      <span class="meta-val">Global Career Accelerator — MSU</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="cs-body">
+
+  <div class="cs-section">
+    <div class="cs-section-label">01 — The Business Problem</div>
+    <h2>Data center site selection is a multi-million dollar decision</h2>
+    <p>Data centers are among the most energy-intensive facilities on earth. For a company like Intel, choosing where to site a new data center involves balancing dozens of variables — energy costs, grid reliability, renewable energy availability, water access for cooling, and local incentive structures. Making that call based on gut instinct or static spreadsheets leaves significant value on the table.</p>
+    <p>Intel's Sustainability Team needed a tool that could bring together multiple data sources and let analysts explore tradeoffs interactively — rather than generating a new report every time a stakeholder asked a different question. The goal was to build a dashboard that made the data explorable and the decision-making process faster and more transparent.</p>
+    <div class="highlight-block">
+      <p>"A great dashboard doesn't just display data — it changes the questions people think to ask. The goal is to make exploration feel effortless so analysts spend their time thinking, not formatting."</p>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">02 — Dashboard Design & Build</div>
+    <h2>Multi-sheet architecture for a multi-dimensional decision</h2>
+    <p>The dashboard was designed around the actual decision workflow: start with a high-level geographic view, drill into regional comparisons, then examine specific site-level metrics. Each sheet in the workbook serves a distinct analytical purpose rather than duplicating information.</p>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">01</span>
+        <div><strong>Data Integration</strong> Combined two separate datasets — regional energy pricing and infrastructure availability data — using Tableau's data blending functionality. Aligned on a shared geographic key to enable cross-dataset calculations without losing granularity in either source.</div>
+      </li>
+      <li>
+        <span class="step-n">02</span>
+        <div><strong>Calculated Fields</strong> Built custom calculated fields to derive metrics not present in the raw data: cost-per-megawatt estimates, renewable energy percentage by region, and a composite site-score index that weighted multiple factors according to Intel's stated priorities. These fields update dynamically as filters change.</div>
+      </li>
+      <li>
+        <span class="step-n">03</span>
+        <div><strong>Chart Type Selection</strong> Matched chart types to the analytical questions each sheet was answering. Bar charts for direct regional comparisons. Dual-axis plots to show the relationship between energy cost and renewable availability on the same scale. Tree maps for visualizing relative energy consumption by facility type. Line charts for tracking grid reliability trends over time.</div>
+      </li>
+      <li>
+        <span class="step-n">04</span>
+        <div><strong>Dynamic Parameters & Filters</strong> Added dropdown parameters allowing users to weight the composite site score by their own priorities — for example, a user who prioritizes cost over sustainability can adjust the weighting and immediately see how site rankings shift. This made the dashboard useful across different stakeholders with different priorities.</div>
+      </li>
+      <li>
+        <span class="step-n">05</span>
+        <div><strong>Dashboard Actions & Interactivity</strong> Configured Tableau dashboard actions so that selecting a region on one sheet filters all other sheets simultaneously. Clicking a bar in the regional comparison instantly updates the detail views — enabling a fluid top-down exploration flow without requiring the user to manually adjust multiple filters.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">03 — Key Outputs</div>
+    <h2>What the dashboard delivered</h2>
+    <div class="findings-grid">
+      <div class="finding-card">
+        <span class="finding-num">2</span>
+        <h4>Datasets Combined</h4>
+        <p>Regional energy pricing and infrastructure availability data blended into a single unified view — enabling cross-dataset analysis without manual joins.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">5+</span>
+        <h4>Chart Types Deployed</h4>
+        <p>Bar charts, dual-axis plots, tree maps, line charts, and a geographic map — each chosen to answer a specific analytical question for the site selection workflow.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">Dynamic</span>
+        <h4>Weighted Site Score</h4>
+        <p>A parameter-driven composite score lets analysts adjust priority weights in real time — so cost-focused and sustainability-focused stakeholders can both use the same tool.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">Multi</span>
+        <h4>Sheet Architecture</h4>
+        <p>Each dashboard sheet serves a distinct analytical purpose — geographic overview, regional comparison, site-level detail — connected by dashboard actions for seamless drill-down.</p>
+      </div>
+    </div>
+    <p>The final dashboard gave Intel's Sustainability Team a self-serve analytical tool — one that could answer "what if" questions about site selection criteria without requiring a new analysis for each scenario. The key design principle was that the tool should surface tradeoffs clearly rather than hiding complexity behind a single recommendation.</p>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">04 — Tableau Skills Demonstrated</div>
+    <h2>Technical depth beyond basic charting</h2>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>Calculated fields and LOD expressions</strong> Going beyond simple aggregations to build derived metrics that answer specific business questions — composite scores, percentage-of-total calculations, and cross-dataset comparisons that can't be done in the source data alone.</div>
+      </li>
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>Parameter controls for user-driven analysis</strong> Parameters transform a static dashboard into a decision-support tool. Rather than presenting a single answer, the dashboard lets analysts explore the data according to their own priorities and assumptions.</div>
+      </li>
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>Dashboard actions for interactive storytelling</strong> Configuring filter, highlight, and URL actions turns a collection of charts into a coherent analytical workflow. Each interaction reveals more detail rather than requiring the user to navigate to a separate report.</div>
+      </li>
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>Chart type judgment</strong> The most important Tableau skill isn't knowing how to build any chart — it's knowing which chart to use for which question. Dual-axis for correlation, tree map for proportional comparison, line for trend — each choice was deliberate.</div>
+      </li>
+    </ul>
+    <div class="tag-row">
+      <span class="tag">Tableau</span>
+      <span class="tag">Calculated Fields</span>
+      <span class="tag">Dashboard Design</span>
+      <span class="tag">Parameters</span>
+      <span class="tag">Data Blending</span>
+      <span class="tag">Dual-Axis Charts</span>
+      <span class="tag">Tree Maps</span>
+      <span class="tag">Energy Analytics</span>
+      <span class="tag">Dashboard Actions</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="project-nav">
+  <a class="proj-nav-link" href="project-ai-industry.html">
+    <span class="nav-dir">← Previous</span>
+    <h4>AI Industry Analysis</h4>
+  </a>
+  <a class="proj-nav-link right" href="project-spotify-tableau.html">
+    <span class="nav-dir">Next Project →</span>
+    <h4>Billboard & Spotify Analysis</h4>
+  </a>
+</div>
+
+<footer>
+  <p>© 2026 BRADY LOWE — DATA ANALYTICS</p>
+  <p>METRO DETROIT, MI</p>
+</footer>
+
+</body>
+</html>

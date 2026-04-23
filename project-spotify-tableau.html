@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Billboard & Spotify Music Analysis — Brady Lowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">BL — ANALYTICS</a>
+  <ul class="nav-links">
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#projects">Projects</a> &nbsp;/&nbsp; Billboard & Spotify Music Analysis
+</div>
+
+<section class="cs-hero">
+  <span class="cs-label">09 — Interactive Visualization / Tableau</span>
+  <h1>Billboard &amp; Spotify<br><em>Music Analysis</em></h1>
+  <p class="cs-summary">Built interactive Tableau visualizations to explore genre trends, track popularity, and audio feature relationships across Billboard and Spotify datasets — using dynamic parameters to let users compare any combination of musical attributes and surface what actually drives chart performance.</p>
+  <div class="cs-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-val">Data Visualization Analyst</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tools</span>
+      <span class="meta-val">Tableau, Parameters, Calculated Fields</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Datasets</span>
+      <span class="meta-val">Billboard Hot 100, Spotify Audio Features API</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Context</span>
+      <span class="meta-val">Global Career Accelerator — MSU</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="cs-body">
+
+  <div class="cs-section">
+    <div class="cs-section-label">01 — The Analytical Question</div>
+    <h2>What separates a chart-topper from everything else?</h2>
+    <p>Spotify's audio features API provides a unique window into the measurable properties of music: danceability, energy, valence (positivity), tempo, acousticness, speechiness, and more. Billboard's Hot 100 tells us which songs actually broke through to mainstream success. Combining the two creates an unusually rich analytical dataset — one that lets you ask whether the acoustic properties of a song predict its commercial performance.</p>
+    <p>The analytical challenge with this kind of dataset isn't the math — it's the exploration. There are dozens of possible attribute combinations to examine, multiple genre segments to compare, and trend lines that shift year to year. A static report can only answer the questions you thought to ask when you wrote it. <strong>The goal was to build a tool that made exploration feel effortless</strong> — so any question could be answered in seconds rather than requiring a new analysis.</p>
+    <div class="highlight-block">
+      <p>"Spotify's audio features turn something as subjective as music into a structured dataset. The interesting question isn't whether the numbers correlate — it's whether the correlations tell you anything a music executive could actually act on."</p>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">02 — Visualization Design</div>
+    <h2>Building for exploration, not just presentation</h2>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">01</span>
+        <div><strong>Genre Proportion View</strong> Designed a dynamic stacked proportion chart showing how the genre composition of the Billboard Hot 100 has shifted over time. A year-range slider lets users isolate any time window and watch genre shares expand or contract. This makes trend shifts — the rise of hip-hop, the decline of rock — immediately visible without requiring the user to compare separate snapshots.</div>
+      </li>
+      <li>
+        <span class="step-n">02</span>
+        <div><strong>Audio Feature Comparison Tool</strong> Built a parameter-driven scatter plot where both the X and Y axes are selectable from a dropdown of Spotify audio features. Users can instantly switch between "danceability vs. energy," "valence vs. tempo," or any other pairing — turning a fixed chart into a flexible exploration tool. Color encodes genre, making cluster patterns visible across comparisons.</div>
+      </li>
+      <li>
+        <span class="step-n">03</span>
+        <div><strong>Popularity vs. Audio Feature Regressions</strong> Built individual views plotting each audio feature against Billboard chart position, with a linear trend line to surface the direction and strength of each relationship. This answered the core question directly: which audio features, if any, are positively associated with chart success — and which show no meaningful relationship.</div>
+      </li>
+      <li>
+        <span class="step-n">04</span>
+        <div><strong>Genre Deep-Dives</strong> Created a genre filter that segments the full dataset so users can apply the audio feature comparison tool within a single genre — answering a more nuanced question: within hip-hop, what separates charting tracks from non-charting ones? This kind of within-genre analysis often surfaces patterns that get washed out in the full-dataset view.</div>
+      </li>
+      <li>
+        <span class="step-n">05</span>
+        <div><strong>Visual Design & Consistency</strong> Applied a consistent color palette across all views, with genre colors staying fixed regardless of which chart or filter is active. This allows users to build visual intuition about genre clusters as they explore — they don't have to re-learn the color coding on every sheet.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">03 — Key Findings</div>
+    <h2>What the music data actually showed</h2>
+    <div class="findings-grid">
+      <div class="finding-card">
+        <span class="finding-num">↑ Dance</span>
+        <h4>Danceability Positively Correlated</h4>
+        <p>Higher danceability scores showed a consistent positive association with chart performance across most genres — one of the stronger audio feature predictors in the dataset.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">Genre</span>
+        <h4>Genre Clusters Clearly Defined</h4>
+        <p>The audio feature scatter plots revealed tight, distinct clusters by genre — hip-hop, country, and pop each occupy measurably different regions of the feature space, confirming that Spotify's attributes capture real musical differences.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">Shift</span>
+        <h4>Genre Share Shifts Over Time</h4>
+        <p>The genre proportion view made visible a decade-long shift in Hot 100 composition — hip-hop's share grew substantially while rock declined, with pop remaining relatively stable as the consistent baseline genre.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">Weak</span>
+        <h4>Acousticness Not Predictive</h4>
+        <p>Acousticness showed minimal correlation with chart performance — high-acoustic and low-acoustic tracks appear at all chart positions, suggesting this attribute doesn't drive commercial success on its own.</p>
+      </div>
+    </div>
+    <p>The most important methodological finding: <strong>full-dataset correlations often masked genre-specific patterns</strong>. An audio feature that appeared weakly correlated in the aggregate became a strong predictor within a single genre. This underscored the importance of segmented analysis — and validated the design decision to build genre filtering into the tool from the start.</p>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">04 — What This Project Demonstrates</div>
+    <h2>Analytical and design skills applied</h2>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>Parameter-driven interactivity</strong> The axis-selection parameters on the scatter plot are the core design decision of this project. Instead of showing 28 separate charts (one per feature pair), a single dynamic view covers all combinations — making the tool dramatically more useful without adding visual clutter.</div>
+      </li>
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>Choosing the right visual for the question</strong> Proportion charts for composition over time. Scatter plots for relationship exploration. Regression lines for trend direction. Each view was chosen because it was the clearest way to answer the specific question that view was designed for.</div>
+      </li>
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>Thinking about the end user</strong> The design prioritized a music industry professional as the primary user — someone who wants to understand what drives chart performance, not someone who wants to explore data for its own sake. Every design decision was made with that use case in mind.</div>
+      </li>
+    </ul>
+    <div class="tag-row">
+      <span class="tag">Tableau</span>
+      <span class="tag">Parameters</span>
+      <span class="tag">Interactive Visualization</span>
+      <span class="tag">Spotify Audio Features</span>
+      <span class="tag">Billboard Data</span>
+      <span class="tag">Genre Analysis</span>
+      <span class="tag">Trend Analysis</span>
+      <span class="tag">Music Analytics</span>
+      <span class="tag">Scatter Plots</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="project-nav">
+  <a class="proj-nav-link" href="project-intel-tableau.html">
+    <span class="nav-dir">← Previous</span>
+    <h4>Intel Energy Dashboard</h4>
+  </a>
+  <a class="proj-nav-link right" href="project-grammy-kpi.html">
+    <span class="nav-dir">Next Project →</span>
+    <h4>Grammy.com KPI Analysis</h4>
+  </a>
+</div>
+
+<footer>
+  <p>© 2026 BRADY LOWE — DATA ANALYTICS</p>
+  <p>METRO DETROIT, MI</p>
+</footer>
+
+</body>
+</html>

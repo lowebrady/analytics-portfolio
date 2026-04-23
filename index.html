@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brady Lowe — Data Analytics Portfolio</title>
+  <meta name="description" content="Brady Lowe — Data Analytics Portfolio. MSU Information Science senior specializing in data analysis, A/B testing, statistical modeling, and business intelligence. Available May 2026.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -17,7 +18,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -36,7 +36,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.25rem 3rem;
-      background: rgba(245,240,232,0.92);
+      background: rgba(245,240,232,0.95);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--light);
     }
@@ -53,6 +53,7 @@
       display: flex;
       gap: 2.5rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
@@ -65,6 +66,21 @@
     }
 
     .nav-links a:hover { color: var(--accent); }
+
+    .nav-resume {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem !important;
+      letter-spacing: 0.08em !important;
+      border: 1px solid var(--ink) !important;
+      color: var(--ink) !important;
+      padding: 0.4rem 0.9rem;
+      transition: all 0.2s !important;
+    }
+
+    .nav-resume:hover {
+      background: var(--ink) !important;
+      color: var(--cream) !important;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -91,6 +107,26 @@
       font-style: italic;
     }
 
+    .hero-tagline {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-tagline::after {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 1px;
+      background: var(--accent);
+    }
+
     .hero-text p {
       font-size: 1.1rem;
       color: var(--mid);
@@ -98,6 +134,12 @@
       margin-bottom: 2.5rem;
       font-weight: 300;
       line-height: 1.75;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .hero-cta {
@@ -130,7 +172,6 @@
       font-weight: 500;
       font-size: 0.9rem;
       letter-spacing: 0.05em;
-      margin-left: 1rem;
       transition: all 0.25s;
     }
 
@@ -173,21 +214,63 @@
       text-transform: uppercase;
     }
 
+    /* ── AVAILABILITY BANNER ── */
+    .availability-banner {
+      background: var(--ink);
+      padding: 0.85rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .avail-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+      animation: pulse 2s ease infinite;
+    }
+
+    @keyframes pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); } 50% { opacity: 0.6; box-shadow: 0 0 0 5px rgba(34,197,94,0); } }
+
+    .availability-banner p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: rgba(245,240,232,0.7);
+      letter-spacing: 0.08em;
+    }
+
+    .availability-banner strong {
+      color: var(--cream);
+    }
+
+    .availability-banner a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .availability-banner a:hover { opacity: 0.75; }
+
     /* ── SKILLS BAR ── */
     .skills-strip {
       background: var(--ink);
       padding: 1.25rem 3rem;
       display: flex;
-      gap: 3rem;
+      gap: 2.5rem;
       overflow-x: auto;
       align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     .skill-tag {
       font-family: 'DM Mono', monospace;
       font-size: 0.75rem;
       color: var(--cream);
-      opacity: 0.7;
+      opacity: 0.6;
       white-space: nowrap;
       letter-spacing: 0.08em;
     }
@@ -201,19 +284,25 @@
       padding: 6rem 3rem;
     }
 
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+    }
+
     .section-label {
       font-family: 'DM Mono', monospace;
       font-size: 0.75rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .section-title {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 3.5rem;
     }
 
     .project-grid {
@@ -232,6 +321,8 @@
       transition: transform 0.25s, box-shadow 0.25s;
       position: relative;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
     }
 
     .project-card::before {
@@ -274,6 +365,17 @@
       margin-bottom: 1.25rem;
     }
 
+    .project-highlight {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--ink);
+      background: var(--light);
+      padding: 0.35rem 0.75rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+    }
+
     .tag-row {
       display: flex;
       flex-wrap: wrap;
@@ -301,6 +403,65 @@
       transform: translate(2px, -2px);
     }
 
+    /* ── SKILLS SECTION ── */
+    .skills-section {
+      background: var(--card-bg);
+      border-top: 1px solid var(--light);
+      border-bottom: 1px solid var(--light);
+      padding: 5rem 3rem;
+    }
+
+    .skills-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--light);
+      border: 1px solid var(--light);
+      margin-top: 3rem;
+    }
+
+    .skill-group {
+      background: var(--cream);
+      padding: 2rem;
+    }
+
+    .skill-group-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .skill-list li {
+      font-size: 0.9rem;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .skill-list li::before {
+      content: '—';
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--accent);
+    }
+
     /* ── ABOUT ── */
     .about {
       background: var(--ink);
@@ -316,6 +477,8 @@
       align-items: center;
     }
 
+    .about .section-label { color: var(--accent); }
+
     .about h2 {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(2rem, 4vw, 3rem);
@@ -328,6 +491,26 @@
       font-size: 1rem;
       line-height: 1.8;
       margin-bottom: 1.25rem;
+    }
+
+    .about-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      padding: 0.85rem 1.5rem;
+      border: 1px solid rgba(245,240,232,0.25);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+    }
+
+    .about-cta:hover {
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     .about-stats {
@@ -372,10 +555,11 @@
       margin-bottom: 1rem;
     }
 
-    .contact p {
+    .contact > div > p {
       color: var(--mid);
       font-size: 1rem;
       line-height: 1.75;
+      margin-bottom: 0.5rem;
     }
 
     .contact-links {
@@ -409,7 +593,16 @@
       color: var(--accent);
       width: 2rem;
       text-align: center;
+      flex-shrink: 0;
     }
+
+    .contact-link .arrow {
+      margin-left: auto;
+      opacity: 0.3;
+      transition: opacity 0.2s;
+    }
+
+    .contact-link:hover .arrow { opacity: 1; }
 
     /* ── FOOTER ── */
     footer {
@@ -427,6 +620,14 @@
       letter-spacing: 0.06em;
     }
 
+    footer a {
+      color: rgba(245,240,232,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover { color: var(--accent); }
+
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -440,101 +641,123 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.25rem; }
       .hero { grid-template-columns: 1fr; padding: 1.5rem; padding-top: 6rem; }
       .hero-visual { display: none; }
-      .projects, .about, .contact { padding: 4rem 1.5rem; }
-      .about-inner, .contact { grid-template-columns: 1fr; gap: 3rem; }
+      .projects, .skills-section, .about { padding: 4rem 1.5rem; }
+      .contact { padding: 4rem 1.5rem; grid-template-columns: 1fr; gap: 3rem; }
+      .about-inner { grid-template-columns: 1fr; gap: 3rem; }
       .skills-strip { padding: 1rem 1.5rem; }
+      .availability-banner { padding: 0.85rem 1.5rem; flex-wrap: wrap; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="#">BRADY LOWE — DATA ANALYTICS</a>
+    <a class="nav-logo" href="#">BL — ANALYTICS</a>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="https://lowebrady.github.io/portfolio-hub">Hub ↗</a></li>
-      <li><a href="https://lowebrady.github.io">UX Portfolio →</a></li>
+      <li><a class="nav-resume" href="https://lowebrady.github.io" target="_blank">Resume ↗</a></li>
     </ul>
   </nav>
+
+  <!-- AVAILABILITY BANNER -->
+  <div class="availability-banner">
+    <div class="avail-dot"></div>
+    <p><strong>Available for opportunities</strong> — data analyst, business analyst &amp; marketing analyst roles &middot; graduating May 2026 &middot; <a href="contact.html">get in touch →</a></p>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-text fade-in">
-      <p class="section-label">Data Analytics Portfolio</p>
+      <p class="hero-tagline">Data Analytics Portfolio</p>
       <h1>Brady<br><em>Lowe.</em></h1>
-      <p>Information Science student at MSU turning raw data into clear, actionable insights — through Excel, Tableu, R, Python, and thoughtful storytelling.</p>
-      <a class="hero-cta" href="#projects">View Projects</a>
-      <a class="hero-cta-secondary" href="/cdn-cgi/l/email-protection#5c3e2e3d38253d30332b391c353f30332938723f3331">Get in Touch</a>
+      <p>Information Science senior at MSU turning raw data into clear, actionable insights — through Excel, Tableau, R, Python, and SQL. I find the signal in the noise and communicate it to people who make decisions.</p>
+      <div class="hero-cta-row">
+        <a class="hero-cta" href="#projects">View Projects →</a>
+        <a class="hero-cta-secondary" href="contact.html">Get in Touch</a>
+      </div>
     </div>
 
-    <div class="hero-visual">
+    <div class="hero-visual fade-in-delay">
+      <div class="stat-card">
+        <span class="stat-number">10</span>
+        <span class="stat-label">Completed Projects</span>
+      </div>
       <div class="stat-card">
         <span class="stat-number">6K+</span>
         <span class="stat-label">YouTube Videos Analyzed</span>
       </div>
       <div class="stat-card">
-        <span class="stat-number">4</span>
-        <span class="stat-label">Data Projects</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">3</span>
-        <span class="stat-label">Tools: R, Python, Excel</span>
+        <span class="stat-number">5+</span>
+        <span class="stat-label">Tools: Tableau, R, Python, Excel, SQL</span>
       </div>
       <div class="stat-card">
         <span class="stat-number">May '26</span>
-        <span class="stat-label">Graduating MSU</span>
+        <span class="stat-label">Available — MSU Grad</span>
       </div>
     </div>
   </section>
 
   <!-- SKILLS STRIP -->
   <div class="skills-strip">
-    <span class="skill-tag accent">// SKILLS</span>
-    <span class="skill-tag">Excel & Pivot Tables</span>
-    <span class="skill-tag">R / RStudio / ggplot2</span>
+    <span class="skill-tag accent">// CORE SKILLS</span>
+    <span class="skill-tag">Excel &amp; Pivot Tables</span>
+    <span class="skill-tag">Tableau</span>
+    <span class="skill-tag">R / tidyverse / ggplot2</span>
     <span class="skill-tag">Python</span>
-    <span class="skill-tag">SQL (Basics)</span>
-    <span class="skill-tag">Data Visualization</span>
-    <span class="skill-tag">Statistical Analysis</span>
-    <span class="skill-tag">Dashboard Design</span>
+    <span class="skill-tag">SQL</span>
     <span class="skill-tag">A/B Testing</span>
-    <span class="skill-tag">Google Trends</span>
+    <span class="skill-tag">Statistical Analysis</span>
+    <span class="skill-tag">Data Visualization</span>
+    <span class="skill-tag">Hypothesis Testing</span>
+    <span class="skill-tag">Marketing Analytics</span>
   </div>
 
   <!-- PROJECTS -->
   <section id="projects" class="projects">
-    <p class="section-label">// WORK</p>
-    <h2 class="section-title">Selected Projects</h2>
+    <div class="section-header">
+      <div>
+        <p class="section-label">// WORK</p>
+        <h2 class="section-title">Selected Projects</h2>
+      </div>
+    </div>
 
     <div class="project-grid">
 
-      <a class="project-card" href="project-youtube.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+      <a class="project-card" href="project-youtube.html">
         <div>
-          <span class="project-num">01 — GLOBAL TECHNOLOGY EXPERIENCE</span>
+          <span class="project-num">01 — GLOBAL TECHNOLOGY EXPERIENCE / CONTENT ANALYTICS</span>
           <h3>YouTube Trending Data Analysis</h3>
-          <p>Analyzed 6,000+ trending YouTube videos to surface the performance drivers that separate viral content from the rest. Built pivot tables, histograms, and summary tables in Excel; delivered actionable insights on category performance, engagement rates, and reach optimization strategies.</p>
+          <div class="project-highlight">↑ 2.3× engagement lift identified from comments analysis</div>
+          <p>Analyzed 6,000+ trending YouTube videos to surface the performance drivers that separate viral content from the rest. Built pivot tables, histograms, and summary tables in Excel — finding that early upload velocity, not raw view count, is the strongest trending predictor.</p>
           <div class="tag-row">
             <span class="tag">Excel</span>
             <span class="tag">Pivot Tables</span>
             <span class="tag">Data Visualization</span>
             <span class="tag">Content Analytics</span>
+            <span class="tag">Engagement Analysis</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
       </a>
 
-      <a class="project-card" href="project-bart.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+      <a class="project-card" href="project-bart.html">
         <div>
-          <span class="project-num">02 — GLOBAL TECHNOLOGY EXPERIENCE</span>
+          <span class="project-num">02 — GLOBAL TECHNOLOGY EXPERIENCE / OPERATIONAL ANALYTICS</span>
           <h3>BART Ridership Data Analysis</h3>
-          <p>Examined Bay Area Rapid Transit ridership records to uncover weekday vs. weekend demand patterns, downtown station traffic peaks, and Yellow Line capacity constraints. Applied Excel functions and data visualizations to inform service optimization recommendations for transit operations.</p>
+          <div class="project-highlight">Top 5 stations = 40% of all boardings; Yellow Line capacity gap identified</div>
+          <p>Examined Bay Area Rapid Transit ridership records to uncover weekday vs. weekend demand patterns, downtown station traffic peaks, and Yellow Line capacity constraints — with data-backed recommendations for service scheduling and off-peak fare strategy.</p>
           <div class="tag-row">
             <span class="tag">Excel</span>
             <span class="tag">Operational Analysis</span>
+            <span class="tag">Capacity Planning</span>
             <span class="tag">Data Cleaning</span>
             <span class="tag">Transportation Data</span>
           </div>
@@ -542,81 +765,204 @@
         <div class="project-arrow">↗</div>
       </a>
 
-      <a class="project-card" href="project-doordash.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+      <a class="project-card" href="project-doordash.html">
         <div>
-          <span class="project-num">03 — MILESTONE PROJECT</span>
+          <span class="project-num">03 — MILESTONE PROJECT / MARKET ANALYTICS</span>
           <h3>DoorDash Delivery Analysis</h3>
-          <p>Analyzed delivery data across major U.S. markets to uncover trends in delivery time, order volume, and cuisine preferences. Identified regional patterns and provided data-driven recommendations to improve operational efficiency and customer satisfaction at scale.</p>
+          <div class="project-highlight">Suburban delivery gap: +12 min vs. urban; 3 high-priority markets flagged</div>
+          <p>Analyzed delivery data across major U.S. markets to uncover trends in delivery time, order volume, and cuisine preferences. Identified regional patterns — including a clear 35-minute customer satisfaction cliff — and provided data-driven recommendations to improve operational efficiency at scale.</p>
           <div class="tag-row">
             <span class="tag">Excel</span>
+            <span class="tag">VLOOKUP</span>
             <span class="tag">Regional Analysis</span>
             <span class="tag">KPI Tracking</span>
-            <span class="tag">Logistics Data</span>
+            <span class="tag">Logistics Analytics</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
       </a>
 
-      <a class="project-card" href="project-winter-sports.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+      <a class="project-card" href="project-winter-sports.html">
         <div>
-          <span class="project-num">04 — MILESTONE PROJECT</span>
+          <span class="project-num">04 — MILESTONE PROJECT / TREND ANALYTICS</span>
           <h3>Winter Sports Interest Analysis</h3>
-          <p>Analyzed and visualized Google Trends data for nine Olympic winter sports to uncover cyclical patterns in public interest. Identified key event-driven spikes and translated findings into strategic insights for content planning and seasonal marketing campaigns.</p>
+          <div class="project-highlight">Curling 18× spike multiplier; 6-week interest runway identified for campaign timing</div>
+          <p>Analyzed Google Trends data for nine Olympic winter sports to uncover cyclical public interest patterns. Separated Olympic years from non-Olympic years, calculated spike multipliers and campaign lead-time windows — translating search data into concrete content strategy recommendations.</p>
           <div class="tag-row">
             <span class="tag">Google Trends</span>
             <span class="tag">Excel</span>
-            <span class="tag">Trend Analysis</span>
-            <span class="tag">Marketing Insights</span>
+            <span class="tag">Cyclical Analysis</span>
+            <span class="tag">Content Strategy</span>
+            <span class="tag">Seasonal Marketing</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
       </a>
 
-      <a class="project-card" href="project-allbirds.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+      <a class="project-card" href="project-allbirds.html">
         <div>
-          <span class="project-num">05 — MILESTONE PROJECT</span>
+          <span class="project-num">05 — MILESTONE PROJECT / A/B TESTING</span>
           <h3>Allbirds A/B Email Campaign Analysis</h3>
-          <p>Conducted and analyzed an A/B test on promotional email subject lines for a seasonal marketing campaign. Evaluated open rates, click-through rates, and conversion metrics to provide data-backed recommendations for improving customer engagement and campaign ROI.</p>
+          <div class="project-highlight">+14% open rate lift, p &lt; 0.05; estimated +22% revenue lift per campaign</div>
+          <p>Designed and analyzed an A/B test on promotional email subject lines — comparing product-focused vs. benefit-focused framing. Applied hypothesis testing in Excel to confirm statistical significance, identified a nuanced conversion rate story, and delivered tiered recommendations for segmented follow-up testing.</p>
           <div class="tag-row">
             <span class="tag">A/B Testing</span>
-            <span class="tag">Excel</span>
+            <span class="tag">Hypothesis Testing</span>
+            <span class="tag">Statistical Significance</span>
             <span class="tag">Email Analytics</span>
-            <span class="tag">Marketing Strategy</span>
+            <span class="tag">Conversion Analysis</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
       </a>
 
-      <a class="project-card" href="project-r-stats.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+      <a class="project-card" href="project-r-stats.html">
         <div>
-          <span class="project-num">06 — STATISTICAL ANALYSIS</span>
-          <h3>Statistical Analysis in R</h3>
-          <p>Analyzed global datasets on life expectancy, CO₂ emissions, and electricity access using R and the tidyverse ecosystem. Constructed confidence intervals, performed hypothesis testing, and built publication-quality visualizations with ggplot2 to communicate findings clearly.</p>
+          <span class="project-num">06 — MSU REASONING WITH DATA / STATISTICAL ANALYSIS</span>
+          <h3>Global Datasets — Statistical Analysis in R</h3>
+          <div class="project-highlight">GDP explains ~70% of life expectancy variance; R² regression across 180+ countries</div>
+          <p>Analyzed global datasets on life expectancy, CO₂ emissions, and electricity access using R and the tidyverse ecosystem. Built confidence intervals, ran hypothesis tests, and created publication-quality ggplot2 visualizations — with all analysis written in reproducible RMarkdown.</p>
           <div class="tag-row">
             <span class="tag">R / RStudio</span>
             <span class="tag">tidyverse</span>
             <span class="tag">ggplot2</span>
             <span class="tag">Hypothesis Testing</span>
+            <span class="tag">Linear Regression</span>
+            <span class="tag">RMarkdown</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
       </a>
 
-      <a class="project-card" href="project-ai-industry.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+      <a class="project-card" href="project-ai-industry.html">
         <div>
-          <span class="project-num">07 — SELF-DIRECTED</span>
-          <h3>AI Industry Analysis</h3>
-          <p>Conducted a personal industry analysis on AI-driven transformation across data and technology fields. Assessed emerging roles, skill gaps, and market opportunities to inform long-term career positioning — translating macro trends into actionable professional strategy.</p>
+          <span class="project-num">07 — SELF-DIRECTED / INDUSTRY RESEARCH</span>
+          <h3>AI Industry Transformation Analysis</h3>
+          <div class="project-highlight">SQL in 75%+ of analyst job postings; pure reporting roles declining as AI absorbs routine tasks</div>
+          <p>A self-directed industry analysis assessing AI's impact across data and technology fields — mapping emerging roles, identifying skill gaps, and translating macro trends from McKinsey, WEF, and LinkedIn Workforce Reports into a concrete career positioning strategy.</p>
           <div class="tag-row">
             <span class="tag">Industry Research</span>
             <span class="tag">Trend Analysis</span>
+            <span class="tag">Skills Mapping</span>
             <span class="tag">Career Strategy</span>
-            <span class="tag">AI/Tech Sector</span>
+            <span class="tag">AI / Tech Sector</span>
           </div>
         </div>
         <div class="project-arrow">↗</div>
       </a>
 
+      <a class="project-card" href="project-intel-tableau.html">
+        <div>
+          <span class="project-num">08 — GLOBAL CAREER ACCELERATOR / TABLEAU</span>
+          <h3>Intel Energy Dashboard — Tableau</h3>
+          <div class="project-highlight">Multi-sheet dashboard for Intel's Sustainability Team — site selection support</div>
+          <p>Built a multi-sheet Tableau dashboard for Intel's Sustainability Team supporting data center site selection. Created calculated fields, dual-axis plots, bar charts, tree maps, and line charts across two datasets — with dynamic parameters and dropdown filters for interactive exploration.</p>
+          <div class="tag-row">
+            <span class="tag">Tableau</span>
+            <span class="tag">Calculated Fields</span>
+            <span class="tag">Dashboard Design</span>
+            <span class="tag">Dual-Axis Charts</span>
+            <span class="tag">Energy Analytics</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="project-spotify-tableau.html">
+        <div>
+          <span class="project-num">09 — GLOBAL CAREER ACCELERATOR / TABLEAU</span>
+          <h3>Billboard &amp; Spotify Music Analysis — Tableau</h3>
+          <div class="project-highlight">Dynamic genre proportion views + custom audio feature comparisons</div>
+          <p>Built interactive Tableau visualizations using parameters to explore genre trends, track popularity, and audio feature relationships across Billboard and Spotify datasets. Designed dynamic genre proportion views and custom audio feature comparison tools for exploratory analysis.</p>
+          <div class="tag-row">
+            <span class="tag">Tableau</span>
+            <span class="tag">Parameters</span>
+            <span class="tag">Interactive Viz</span>
+            <span class="tag">Music Analytics</span>
+            <span class="tag">Trend Analysis</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="project-grammy-kpi.html">
+        <div>
+          <span class="project-num">10 — GLOBAL CAREER ACCELERATOR / EXCEL — RECORDING ACADEMY</span>
+          <h3>Grammy.com KPI &amp; Engagement Analysis</h3>
+          <div class="project-highlight">Assessed business impact of Grammy.com's 2022 website split — executive-ready findings</div>
+          <p>Used advanced Excel analytics — PivotTables, XLOOKUP, SUMIFS, AVERAGEIFS — to calculate user engagement KPIs and mobile visitor rates for Grammy.com. Assessed the business impact of the site's 2022 split and delivered executive-ready findings. This project earned a Data Analysis Certification from the Global Career Accelerator / Recording Academy.</p>
+          <div class="tag-row">
+            <span class="tag">Excel (Advanced)</span>
+            <span class="tag">XLOOKUP</span>
+            <span class="tag">SUMIFS / AVERAGEIFS</span>
+            <span class="tag">KPI Analysis</span>
+            <span class="tag">Web Analytics</span>
+            <span class="tag">🏆 Certified</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+    </div>
+
+    <!-- CERTIFICATION CALLOUT -->
+    <div style="margin-top:2.5rem; padding:1.5rem 2rem; border:1px solid var(--light); background:var(--card-bg); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+      <span style="font-family:'DM Serif Display',serif; font-size:1.75rem; color:var(--accent);">🏆</span>
+      <div>
+        <p style="font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.3rem;">Certification</p>
+        <p style="font-size:0.95rem; color:var(--ink); font-weight:500; margin:0;">Data Analysis Certification — Generating Recommendations Using Excel</p>
+        <p style="font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--mid); margin-top:0.2rem; letter-spacing:0.04em;">Global Career Accelerator / Recording Academy &nbsp;·&nbsp; 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="skills-section">
+    <div class="skills-inner">
+      <p class="section-label">// CAPABILITIES</p>
+      <h2 class="section-title">Skills &amp; Tools</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <span class="skill-group-label">Data Analysis</span>
+          <ul class="skill-list">
+            <li>Excel (Advanced) — PivotTables, XLOOKUP, SUMIFS, T.TEST</li>
+            <li>SQL — queries, joins, aggregations</li>
+            <li>Python — pandas, data cleaning</li>
+            <li>Google Trends</li>
+            <li>Google Sheets</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group-label">Data Visualization & BI</span>
+          <ul class="skill-list">
+            <li>Tableau — dashboards, calculated fields, parameters</li>
+            <li>R / ggplot2 — publication-quality charts</li>
+            <li>Excel charting — histograms, dual-axis, tree maps</li>
+            <li>RMarkdown (reproducible analysis)</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group-label">Statistical Methods</span>
+          <ul class="skill-list">
+            <li>Hypothesis Testing &amp; p-values</li>
+            <li>A/B Testing design &amp; analysis</li>
+            <li>Confidence Intervals</li>
+            <li>Linear Regression (R²)</li>
+            <li>Descriptive &amp; Inferential Statistics</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group-label">Business &amp; Communication</span>
+          <ul class="skill-list">
+            <li>Data storytelling &amp; executive presentations</li>
+            <li>Marketing analytics &amp; A/B testing</li>
+            <li>KPI definition &amp; tracking</li>
+            <li>Operations &amp; logistics analytics</li>
+            <li>UX research &amp; design thinking</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -624,11 +970,12 @@
   <section id="about" class="about">
     <div class="about-inner">
       <div>
-        <p class="section-label" style="color: var(--accent);">// ABOUT</p>
-        <h2>Data-driven by nature, creative by practice.</h2>
-        <p>I'm a graduating senior at Michigan State University studying Information Science, with a focus on the Data Analysis track through the Global Technology Experience program. I believe good analysis isn't just about the numbers — it's about telling the right story to the right people.</p>
-        <p>Outside of data work, I'm a freelance graphic designer and the VP of Delta Kappa Epsilon Fraternity. I bring the same systems thinking to every project: understand the problem, find the signal in the noise, communicate clearly.</p>
-        <p>I also hold a UX design portfolio — because I design with data and analyze with empathy. That combination gives me an edge in roles where research, design, and decision-making overlap.</p>
+        <p class="section-label">// ABOUT</p>
+        <h2>Data-driven by nature,<br>creative by practice.</h2>
+        <p>I'm a graduating senior at Michigan State University studying Information Science, with a focus on the Data Analysis track through the Global Technology Experience (GTE) program. I believe good analysis isn't just about the numbers — it's about telling the right story to the right people at the right time.</p>
+        <p>My experience spans analytics, IT, and design. I completed an IT internship at AJM Packaging supporting 200+ end users and working on Active Directory and infrastructure projects — giving me a real understanding of how data and systems work together inside organizations. I'm also a freelance graphic designer and VP of Delta Kappa Epsilon (80+ members), which means I've built real experience managing projects, communicating decisions, and leading teams.</p>
+        <p>I hold a Data Analysis Certification from the Global Career Accelerator / Recording Academy, and a UX design portfolio — because I design with data and analyze with empathy. That combination is increasingly valuable as companies look for analysts who can bridge research, product, and strategy.</p>
+        <a class="about-cta" href="contact.html">Open to opportunities — let's talk →</a>
       </div>
       <div class="about-stats">
         <div class="about-stat">
@@ -636,12 +983,12 @@
           <span class="label">Michigan State University</span>
         </div>
         <div class="about-stat">
-          <span class="num">2026</span>
+          <span class="num">May '26</span>
           <span class="label">Expected Graduation</span>
         </div>
         <div class="about-stat">
-          <span class="num">IS</span>
-          <span class="label">Information Science, B.A.</span>
+          <span class="num">B.A.</span>
+          <span class="label">Information Science</span>
         </div>
         <div class="about-stat">
           <span class="num">GTE</span>
@@ -655,20 +1002,48 @@
   <section id="contact" class="contact">
     <div>
       <p class="section-label">// CONTACT</p>
-      <h2>Let's work together.</h2>
-      <p style="color: var(--mid); line-height: 1.75;">Open to data analyst, business analyst, and analytics-adjacent internship and entry-level opportunities. Based in Metro Detroit, open to all types of roles.</p>
+      <h2>Let's work<br>together.</h2>
+      <p>Open to data analyst, business analyst, and marketing analyst roles — internship and entry-level.</p>
+      <p style="margin-top:0.5rem;">Based in Metro Detroit. Open to remote and hybrid opportunities nationwide.</p>
     </div>
     <div class="contact-links">
-      <a class="contact-link" href="/cdn-cgi/l/email-protection#f19383909588909d9e8694b198929d9e8495df929e9c">
+      <a class="contact-link" href="mailto:bradyalowe@icloud.com">
         <span class="icon">@</span>
-        <span class="__cf_email__" data-cfemail="6c0e1e0d08150d00031b092c050f00031908420f0301">[email&#160;protected]</span>
+        bradyalowe@icloud.com
+        <span class="arrow">→</span>
       </a>
       <a class="contact-link" href="tel:5862290999">
         <span class="icon">☏</span>
         (586) 229-0999
+        <span class="arrow">→</span>
       </a>
       <a class="contact-link" href="https://www.linkedin.com/in/brady-lowe-2290871bb" target="_blank">
         <span class="icon">in</span>
-        LinkedIn
+        LinkedIn — Brady Lowe
+        <span class="arrow">→</span>
       </a>
-     
+      <a class="contact-link" href="https://github.com/lowebrady" target="_blank">
+        <span class="icon">&lt;/&gt;</span>
+        GitHub — View Code
+        <span class="arrow">→</span>
+      </a>
+      <a class="contact-link" href="contact.html">
+        <span class="icon">✉</span>
+        Send a Message
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 BRADY LOWE — DATA ANALYTICS</p>
+    <p>
+      <a href="https://lowebrady.github.io">UX Portfolio ↗</a>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      METRO DETROIT, MI
+    </p>
+  </footer>
+
+</body>
+</html>

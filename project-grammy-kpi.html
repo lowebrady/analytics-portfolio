@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grammy.com KPI & Engagement Analysis — Brady Lowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">BL — ANALYTICS</a>
+  <ul class="nav-links">
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#projects">Projects</a> &nbsp;/&nbsp; Grammy.com KPI & Engagement Analysis
+</div>
+
+<section class="cs-hero">
+  <span class="cs-label">10 — Web Analytics / Excel — Recording Academy</span>
+  <h1>Grammy.com KPI &amp;<br><em>Engagement Analysis</em></h1>
+  <p class="cs-summary">Used advanced Excel analytics to calculate user engagement KPIs and mobile visitor rates for Grammy.com — assessing the measurable business impact of the Recording Academy's 2022 website split and delivering executive-ready findings that earned a Data Analysis Certification.</p>
+  <div class="cs-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-val">Web Analytics Analyst</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tools</span>
+      <span class="meta-val">Excel — PivotTables, XLOOKUP, SUMIFS, AVERAGEIFS</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Domain</span>
+      <span class="meta-val">Web Analytics / Media & Entertainment</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Context</span>
+      <span class="meta-val">Global Career Accelerator — Recording Academy / MSU</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="cs-body">
+
+  <div class="cs-section">
+    <div class="cs-section-label">01 — Background & Business Context</div>
+    <h2>A major site restructuring with measurable consequences</h2>
+    <p>In 2022, the Recording Academy — the organization behind the Grammy Awards — made a significant strategic decision: splitting Grammy.com into two distinct properties. This kind of major digital restructuring carries real business risk. Traffic can fragment. Users who were accustomed to a single destination may not follow a redirect to a new URL. Mobile visitors, who behave differently from desktop users, may drop off entirely.</p>
+    <p>The question this analysis was designed to answer: <strong>did the 2022 website split help or hurt Grammy.com's digital engagement — and what do the KPIs tell us about how users responded?</strong> Understanding that impact matters both for evaluating the original decision and for informing any future digital strategy work.</p>
+    <div class="highlight-block">
+      <p>"Web analytics is only useful if it connects to a business decision. The question was never 'what happened to traffic' — it was 'what does the traffic data tell us about whether the website split achieved its goals.'"</p>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">02 — Methodology</div>
+    <h2>Advanced Excel as a serious analytical tool</h2>
+    <p>This project used Excel as the primary analytical environment — applying functions well beyond basic formulas to build a rigorous KPI framework from raw web analytics data.</p>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">01</span>
+        <div><strong>KPI Framework Definition</strong> Established the specific engagement metrics to track before touching the data: sessions, bounce rate, pages per session, average session duration, mobile visit share, and return visitor rate. Defining metrics in advance prevents the temptation to cherry-pick favorable numbers after the fact.</div>
+      </li>
+      <li>
+        <span class="step-n">02</span>
+        <div><strong>XLOOKUP for Cross-Sheet Data Retrieval</strong> Used XLOOKUP to pull matching records across multiple sheets — linking traffic data to page-level metadata and device-type breakdowns without manually copying between tables. XLOOKUP's flexibility over VLOOKUP was essential here for matching on non-leftmost columns and handling lookup errors gracefully.</div>
+      </li>
+      <li>
+        <span class="step-n">03</span>
+        <div><strong>SUMIFS & AVERAGEIFS for Segmented KPIs</strong> Applied SUMIFS and AVERAGEIFS with multiple criteria to calculate engagement metrics by device type, date range, and content category simultaneously. This allowed direct comparison of mobile vs. desktop engagement rates before and after the site split — a more meaningful comparison than aggregate averages alone.</div>
+      </li>
+      <li>
+        <span class="step-n">04</span>
+        <div><strong>PivotTables for Trend Visualization</strong> Built PivotTables to summarize monthly engagement trends pre- and post-split, with slicers for device type and content category. The pivot structure made it easy to answer "how did mobile engagement in the awards content category change after the split?" without writing new formulas for each cut of the data.</div>
+      </li>
+      <li>
+        <span class="step-n">05</span>
+        <div><strong>Executive-Ready Presentation Layer</strong> Condensed the full analysis into a summary dashboard using conditional formatting to highlight KPIs above and below pre-split benchmarks. The goal was a deliverable that a non-technical executive could read in under two minutes and understand what changed, why it matters, and what to do about it.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">03 — Key Findings</div>
+    <h2>What the KPI data revealed about the split's impact</h2>
+    <div class="findings-grid">
+      <div class="finding-card">
+        <span class="finding-num">Mobile</span>
+        <h4>Mobile Visit Rate Analyzed</h4>
+        <p>Calculated mobile visitor share pre- and post-split to determine whether the restructuring disproportionately affected mobile users — who navigate differently and are more sensitive to URL changes and redirect friction.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">KPI</span>
+        <h4>Full Engagement Framework</h4>
+        <p>Tracked sessions, bounce rate, pages per session, session duration, and return visitor rate — a complete picture of engagement quality, not just traffic volume, which can be misleading in isolation.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">Pre/Post</span>
+        <h4>Before vs. After Comparison</h4>
+        <p>Structured the analysis as a before/after comparison using the 2022 split as the treatment event — isolating the signal of the restructuring from normal seasonal traffic variation.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">🏆</span>
+        <h4>Certification Awarded</h4>
+        <p>This analysis earned a Data Analysis Certification from the Global Career Accelerator and the Recording Academy — the industry partner for this program track.</p>
+      </div>
+    </div>
+    <p>The findings were delivered in an executive summary format designed for a non-technical audience at the Recording Academy — a real stakeholder organization, not a simulated one. The analysis had to be clear enough for a senior executive to act on, rigorous enough to withstand analytical scrutiny, and concise enough to be read at all.</p>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">04 — Excel Skills Demonstrated</div>
+    <h2>Why advanced Excel still matters</h2>
+    <p>Excel proficiency is the single most universally required skill in data analyst job postings. This project demonstrates the functions that separate a competent Excel user from an advanced one:</p>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>XLOOKUP</strong> — Excel's modern replacement for VLOOKUP, supporting bidirectional lookups, returning multiple columns, and handling errors without nested IFERROR wrapping. Used here to link data across sheets without manual data entry.</div>
+      </li>
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>SUMIFS / AVERAGEIFS</strong> — Multi-criteria conditional aggregation. The core function for segmented KPI calculation — summing or averaging only the rows that match multiple conditions simultaneously. Essential for any analysis that needs to slice data by more than one dimension.</div>
+      </li>
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>PivotTables with slicers</strong> — Rapid exploratory summarization that doesn't require rewriting formulas for each new cut of the data. Slicers make pivot tables accessible to non-technical stakeholders who need to explore the data themselves.</div>
+      </li>
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>Conditional formatting for executive dashboards</strong> — Visual encoding that makes the direction of KPI changes immediately apparent. Green/red formatting on a benchmark comparison table communicates "better/worse" faster than any chart can.</div>
+      </li>
+    </ul>
+    <div class="tag-row">
+      <span class="tag">Excel (Advanced)</span>
+      <span class="tag">XLOOKUP</span>
+      <span class="tag">SUMIFS</span>
+      <span class="tag">AVERAGEIFS</span>
+      <span class="tag">PivotTables</span>
+      <span class="tag">KPI Analysis</span>
+      <span class="tag">Web Analytics</span>
+      <span class="tag">Mobile Analytics</span>
+      <span class="tag">Executive Reporting</span>
+      <span class="tag">🏆 Certified — Recording Academy</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- CERTIFICATION CALLOUT -->
+<div style="max-width:1100px; margin:0 auto; padding:0 3rem 4rem;">
+  <div style="padding:1.5rem 2rem; border:1px solid var(--light); background:var(--card-bg); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+    <span style="font-family:'DM Serif Display',serif; font-size:2rem; color:var(--accent);">🏆</span>
+    <div>
+      <p style="font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.3rem;">Certification Earned</p>
+      <p style="font-size:0.95rem; color:var(--ink); font-weight:500; margin:0;">Data Analysis Certification — Generating Recommendations Using Excel</p>
+      <p style="font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--mid); margin-top:0.25rem; letter-spacing:0.04em;">Global Career Accelerator / Recording Academy &nbsp;·&nbsp; 2026</p>
+    </div>
+  </div>
+</div>
+
+<div class="project-nav">
+  <a class="proj-nav-link" href="project-spotify-tableau.html">
+    <span class="nav-dir">← Previous</span>
+    <h4>Billboard & Spotify Analysis</h4>
+  </a>
+  <a class="proj-nav-link right" href="index.html#projects">
+    <span class="nav-dir">Back to</span>
+    <h4>All Projects</h4>
+  </a>
+</div>
+
+<footer>
+  <p>© 2026 BRADY LOWE — DATA ANALYTICS</p>
+  <p>METRO DETROIT, MI</p>
+</footer>
+
+</body>
+</html>
